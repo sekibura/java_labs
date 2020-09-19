@@ -14,6 +14,7 @@ public class Controller {
         Model model=new Model();
         String[] result=model.SortString(array);
         View view=new View();
+        view.Display(array);
         view.Display(result);
 
     }
