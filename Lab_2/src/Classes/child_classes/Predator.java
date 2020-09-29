@@ -1,6 +1,7 @@
 package Classes.child_classes;
 
 import Classes.Animals;
+import Classes.Forest;
 
 import java.util.Vector;
 
@@ -24,7 +25,8 @@ public class Predator extends Animals {
         System.out.println("Have claws? - " + isHave_claws());
     }
 
-    public void ToHunt(Vector<Animals> animals) {
+    public void ToHunt(Forest forest) {
+        Vector<Animals> animals=forest.getAnimals();
         for (Object animal : animals) {
             if(((Animals)animal).getWeight()<this.getWeight()) { // if prey have is less
                 animals.remove(animal); // removing prey
