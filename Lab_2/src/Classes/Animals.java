@@ -1,6 +1,6 @@
 package Classes;
 
-public class Animals {
+public abstract class Animals {
     private String name;
     private  int age;
     private float weight;
@@ -39,4 +39,11 @@ public class Animals {
         return name;
     }
 //--------------------------------------
+public void print(){
+    System.out.println("Class"+getClass());
+    System.out.println("Name - "+getName());
+    System.out.println("Weight - "+ getWeight());
+    System.out.println("Age- "+ getAge());
+}
+
 }

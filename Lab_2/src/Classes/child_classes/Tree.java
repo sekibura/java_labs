@@ -34,4 +34,14 @@ public class Tree extends Plants {
         this.trunk_radius = trunk_radius;
     }
 //-------------------------------------------------------
+public void print(){
+    System.out.println("Class"+getClass());
+    System.out.println("Name - "+getName());
+    System.out.println("Height - "+ getHeight());
+    System.out.println("Age- "+ getAge());
+    System.out.println("Have fruit? - "+isHaveFruit());
+    System.out.println("Bark color - "+getBark_color());
+    System.out.println("Trunk radius - "+getTrunk_radius());
 }
+}
+

@@ -1,6 +1,6 @@
 package Classes;
 
-public class Plants {
+public abstract class Plants {
     private String name;
     private float height;
     private int age;
@@ -52,5 +52,12 @@ public class Plants {
 
     public float getHeight() {
         return height;
+    }
+    public void print(){
+        System.out.println("Class"+getClass());
+        System.out.println("Name - "+getName());
+        System.out.println("Height - "+ getHeight());
+        System.out.println("Age- "+ getAge());
+        System.out.println("Have Fruit? - "+ isHaveFruit());
     }
 }

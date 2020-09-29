@@ -15,6 +15,14 @@ public class Herbivore extends Animals {
         setPreferred_plants(preferred_plants);
     }
 
+    public void print(){
+        System.out.println("Class"+getClass());
+        System.out.println("Name - "+getName());
+        System.out.println("Weight - "+ getWeight());
+        System.out.println("Age- "+ getAge());
+        System.out.println("Preferred plants - "+getPreferred_plants());
+    }
+
     public void setPreferred_plants(String preferred_plants) {
         this.preferred_plants = preferred_plants;
     }

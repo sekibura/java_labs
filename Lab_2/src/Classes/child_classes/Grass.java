@@ -13,8 +13,16 @@ public class Grass extends Plants {
         super(name, height, age, haveFruit);
         setIs_flowers(is_flowers);
     }
+    public void print(){
+        System.out.println("Class"+getClass());
+        System.out.println("Name - "+getName());
+        System.out.println("Height - "+ getHeight());
+        System.out.println("Age- "+ getAge());
+        System.out.println("Have Fruit? - "+ isHaveFruit());
+        System.out.println("Is flower? - "+ is_flowers());
+    }
 
-    public boolean Is_flowers() {
+    public boolean is_flowers() {
         return is_flowers;
     }
 
