@@ -13,8 +13,8 @@ public class Forest {
     private final Vector<Animals> animals;
 
     public Forest(){
-        plants= new Vector<>(1);
-        animals= new Vector<>(1);
+        plants= new Vector<>(0);
+        animals= new Vector<>(0);
     }
 
     public void AddPredator(String name, float weight, int age, boolean have_claws){

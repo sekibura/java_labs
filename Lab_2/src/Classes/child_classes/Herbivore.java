@@ -1,6 +1,10 @@
 package Classes.child_classes;
 
 import Classes.Animals;
+import Classes.Forest;
+import Classes.Plants;
+
+import java.util.Vector;
 
 //травоядное
 public class Herbivore extends Animals {
@@ -21,6 +25,20 @@ public class Herbivore extends Animals {
         System.out.println("Weight - "+ getWeight());
         System.out.println("Age- "+ getAge());
         System.out.println("Preferred plants - "+getPreferred_plants());
+    }
+
+    public void ToEat(Forest forest) {
+        Vector<Plants> plants=forest.getPlants();
+        Object prey=null;
+        for (Object plant : plants) {
+            if(((Plants)plant).getName().equals(this.getPreferred_plants())) {
+                //plants.remove(plant); // removing plant
+                prey=plant;
+                System.out.println(((Plants) plant).getName()+" был съеден травоядным - "+this.getName());
+                break;
+            }
+        }
+        plants.remove(prey);
     }
 
     public void setPreferred_plants(String preferred_plants) {
