@@ -1,4 +1,8 @@
 public class View {
+
+    public View(){
+        System.out.println("Init view");
+    }
     public void DisplayInfo(String value){
         System.out.println("************");
         System.out.println(value);
@@ -11,6 +15,8 @@ public class View {
         System.out.println("3) Add herbivore");
         System.out.println("4) Add tree");
         System.out.println("5) Print all forest");
-
+        System.out.println("6) To hunt");
+        System.out.println("7) To eat plants");
+        System.out.println("0) Exit");
     }
 }

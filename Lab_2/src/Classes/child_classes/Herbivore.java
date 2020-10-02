@@ -30,14 +30,17 @@ public class Herbivore extends Animals {
     public void ToEat(Forest forest) {
         Vector<Plants> plants=forest.getPlants();
         Object prey=null;
+        boolean isStarve=true;
         for (Object plant : plants) {
             if(((Plants)plant).getName().equals(this.getPreferred_plants())) {
                 //plants.remove(plant); // removing plant
                 prey=plant;
                 System.out.println(((Plants) plant).getName()+" был съеден травоядным - "+this.getName());
+                isStarve=false;
                 break;
             }
         }
+        if (isStarve){System.out.println("Еды не найдено!");}
         plants.remove(prey);
     }
 

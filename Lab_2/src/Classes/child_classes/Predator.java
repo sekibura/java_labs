@@ -28,14 +28,17 @@ public class Predator extends Animals {
     public void ToHunt(Forest forest) {
         Vector<Animals> animals=forest.getAnimals();
         Object prey=null;
+        boolean isStarve=true;
         for (Object animal : animals) {
             if(((Animals)animal).getWeight()<this.getWeight()) { // if prey have is less
                 //animals.remove(animal); // removing prey
                 prey=animal;
                 System.out.println(((Animals) animal).getName()+" был съеден хищником - "+this.getName());
+                isStarve=false;
                 break;
             }
         }
+        if (isStarve){System.out.println("Жертва не найдена!");}
         animals.remove(prey);
     }
 
