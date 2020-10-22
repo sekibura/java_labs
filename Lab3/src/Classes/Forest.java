@@ -4,10 +4,9 @@ import Classes.child_classes.Grass;
 import Classes.child_classes.Herbivore;
 import Classes.child_classes.Predator;
 import Classes.child_classes.Tree;
-import Managers.FileManager;
+import Classes.Managers.FileManager;
 
 
-import java.io.File;
 import java.util.Vector;
 import java.io.Serializable;
 public class Forest implements Serializable {

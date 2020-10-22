@@ -1,3 +1,5 @@
+package Classes;
+
 public class View {
 
     public View(){

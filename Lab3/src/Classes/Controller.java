@@ -1,12 +1,15 @@
+package Classes;
+
 import java.util.Scanner;
 
+
 public class Controller {
-    View view;
-    Model model;
+    View view=null;
+    Model model=null;
 
     public Controller() {
         view = new View();
-        System.out.println("Controller init");
+        System.out.println("Classes.Controller init");
 
     }
 
@@ -16,41 +19,43 @@ public class Controller {
     }
 
     public void StartWork() {
-        while (true) {
-            view.MainMenu();
-            int input = InputDigit(0, 9);
-            switch (input) {
-                case 1:
-                    model.AddPredator();
-                    break;
-                case 2:
-                    model.AddGrass();
-                    break;
-                case 3:
-                    model.AddHerbivore();
-                    break;
-                case 4:
-                    model.AddTree();
-                    break;
-                case 5:
-                    model.PrintForest();
-                    break;
-                case 6:
-                    model.ToHunt();
-                    break;
-                case 7:
-                    model.ToEatGrass();
-                    break;
-                case 8:
-                    model.SaveForest();
-                    break;
-                case 9:
-                    model.LoadForest();
-                    break;
-                case 0:
-                    System.exit(0);
-                    break;
+        if(model!=null) {
+            while (true) {
+                view.MainMenu();
+                int input = InputDigit(0, 9);
+                switch (input) {
+                    case 1:
+                        model.AddPredator();
+                        break;
+                    case 2:
+                        model.AddGrass();
+                        break;
+                    case 3:
+                        model.AddHerbivore();
+                        break;
+                    case 4:
+                        model.AddTree();
+                        break;
+                    case 5:
+                        model.PrintForest();
+                        break;
+                    case 6:
+                        model.ToHunt();
+                        break;
+                    case 7:
+                        model.ToEatGrass();
+                        break;
+                    case 8:
+                        model.SaveForest();
+                        break;
+                    case 9:
+                        model.LoadForest();
+                        break;
+                    case 0:
+                        System.exit(0);
+                        break;
 
+                }
             }
         }
     }
@@ -86,6 +91,9 @@ public class Controller {
 //        System.out.println("Please enter " + message + " .");
         Scanner scanner = new Scanner(System.in);
         String inputValue = scanner.nextLine();
+        while(inputValue.isEmpty()){
+            view.DisplayInfo("\nEmpty! Try again!\n");
+        }
         return inputValue;
     }
 

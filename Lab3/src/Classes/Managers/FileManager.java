@@ -1,8 +1,8 @@
-package Managers;
+package Classes.Managers;
+
 
 import java.io.*;
 import java.io.FileNotFoundException;
-import java.util.Vector;
 
 public class FileManager {
     public FileManager() {

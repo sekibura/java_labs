@@ -1,5 +1,4 @@
-import Classes.child_classes.Herbivore;
-import Classes.child_classes.Predator;
+package Classes;
 
 public class Main {
 

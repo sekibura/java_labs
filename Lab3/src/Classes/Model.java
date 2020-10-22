@@ -1,5 +1,5 @@
-import Classes.Animals;
-import Classes.Forest;
+package Classes;
+
 import Classes.child_classes.Herbivore;
 import Classes.child_classes.Predator;
 
