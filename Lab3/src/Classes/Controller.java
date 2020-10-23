@@ -1,11 +1,15 @@
 package Classes;
 
+import Classes.Managers.LoginManager;
+import sun.rmi.runtime.Log;
+
 import java.util.Scanner;
 
 
 public class Controller {
-    View view=null;
-    Model model=null;
+    View view = null;
+    Model model = null;
+    LoginManager loginManager;
 
     public Controller() {
         view = new View();
@@ -18,11 +22,24 @@ public class Controller {
         model = model1;
     }
 
+    public void setLoginManager(LoginManager loginManager1) {
+        loginManager = loginManager1;
+    }
+
     public void StartWork() {
-        if(model!=null) {
+        if (model != null) {
+            loginManager.LoginMenu();
             while (true) {
-                view.MainMenu();
-                int input = InputDigit(0, 9);
+                int input = 0;
+                if (loginManager.getCurrent_user().getGroup() == TypeGroup.root) {
+                    view.MainMenuRoot();
+                    input = InputDigit(0, 12);
+                } else {
+                    view.MainMenuUser();
+                    input = InputDigit(0, 10);
+                }
+
+
                 switch (input) {
                     case 1:
                         model.AddPredator();
@@ -50,6 +67,9 @@ public class Controller {
                         break;
                     case 9:
                         model.LoadForest();
+                        break;
+                    case 10:
+                        view.DisplayInfo(loginManager.getCurrent_user().getSettings());
                         break;
                     case 0:
                         System.exit(0);
@@ -91,7 +111,7 @@ public class Controller {
 //        System.out.println("Please enter " + message + " .");
         Scanner scanner = new Scanner(System.in);
         String inputValue = scanner.nextLine();
-        while(inputValue.isEmpty()){
+        while (inputValue.isEmpty()) {
             view.DisplayInfo("\nEmpty! Try again!\n");
         }
         return inputValue;
@@ -129,5 +149,6 @@ public class Controller {
         }
         return true;
     }
+
 
 }

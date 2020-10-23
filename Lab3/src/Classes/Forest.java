@@ -12,10 +12,12 @@ import java.io.Serializable;
 public class Forest implements Serializable {
     private final Vector<Plants> plants;
     private final Vector<Animals> animals;
+    private Paths paths;
 
     public Forest(){
         plants= new Vector<>(1);
         animals= new Vector<>(1);
+        paths=new Paths();
     }
 
     public void AddPredator(String name, float weight, int age, boolean have_claws){
@@ -84,13 +86,13 @@ public class Forest implements Serializable {
 
     public void SaveForest(){
         FileManager fm=new FileManager();
-        fm.<Vector<Plants>>Save(plants,"D:\\институт\\3 КУРС\\Java\\java_labs\\Lab3\\plants");
-        fm.<Vector<Animals>>Save(animals,"D:\\институт\\3 КУРС\\Java\\java_labs\\Lab3\\animals");
+        fm.<Vector<Plants>>Save(plants,paths.getPlantsBasePath());
+        fm.<Vector<Animals>>Save(animals,paths.getAnimalBasePath());
     }
 
     public void LoadForest(){
         FileManager fm=new FileManager();
-        SetAnimals((Vector<Animals>) fm.<Vector<Animals>>Load("D:\\институт\\3 КУРС\\Java\\java_labs\\Lab3\\animals"));
-        SetPlants((Vector<Plants>) fm.<Vector<Plants>>Load("D:\\институт\\3 КУРС\\Java\\java_labs\\Lab3\\plants"));
+        SetAnimals((Vector<Animals>) fm.<Vector<Animals>>Load(paths.getAnimalBasePath()));
+        SetPlants((Vector<Plants>) fm.<Vector<Plants>>Load(paths.getPlantsBasePath()));
     }
 }

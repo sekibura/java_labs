@@ -5,6 +5,7 @@ import java.io.*;
 import java.io.FileNotFoundException;
 
 public class FileManager {
+
     public FileManager() {
         //FileManager was created
         System.out.println("FileManager was created"); // in log!
@@ -43,7 +44,7 @@ public class FileManager {
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         } catch (IOException e) {
-            System.out.println("Error initializing stream "+e);
+            System.out.println("Error initializing stream " + e);
         } catch (ClassNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

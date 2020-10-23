@@ -1,5 +1,7 @@
 package Classes;
 
+import Classes.Managers.LoginManager;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -7,7 +9,10 @@ public class Main {
         Model model=new Model();
         controller.setModel(model);
         model.setController(controller);
+        LoginManager loginManager=new LoginManager(controller);
+        controller.setLoginManager(loginManager);
         controller.StartWork();
+
 //        Forest forest = new Forest();
 //        forest.AddGrass("Travka", 12, 1, false, false);
 //        forest.AddGrass("Oduvanchik", 12, 1, false, true);
