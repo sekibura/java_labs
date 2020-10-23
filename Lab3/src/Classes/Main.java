@@ -1,10 +1,14 @@
 package Classes;
 
 import Classes.Managers.LoginManager;
+import Classes.Managers.MyLogger;
+
+import java.util.logging.Logger;
 
 public class Main {
 
     public static void main(String[] args) {
+        Logger logger = MyLogger.Setup();
         Controller controller = new Controller();
         Model model=new Model();
         controller.setModel(model);

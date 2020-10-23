@@ -6,11 +6,13 @@ public class User implements Serializable {
     private String Login;
     private String password;
     private TypeGroup group;
+    private boolean DebugMode;
 
     public User(String login_,String password_,TypeGroup group_){
         Login =login_;
         password=password_;
         group=group_;
+        DebugMode=false;
     }
 
     public String getLogin() {
@@ -34,6 +36,14 @@ public class User implements Serializable {
     }
     public String getSettings(){
         return "Login:"+getLogin()+"\nPassword:"+getPassword()+"\nGroup:"+getGroupString();
+    }
+
+    public void setDebugMode(boolean debugMode) {
+        DebugMode = debugMode;
+    }
+
+    public boolean isDebugMode() {
+        return DebugMode;
     }
 }
 

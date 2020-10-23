@@ -3,12 +3,16 @@ package Classes.Managers;
 
 import java.io.*;
 import java.io.FileNotFoundException;
+import java.util.logging.*;
 
 public class FileManager {
+    Logger logger;
 
     public FileManager() {
-        //FileManager was created
-        System.out.println("FileManager was created"); // in log!
+        logger = MyLogger.GetLogger();
+        logger.log(Level.INFO, "FileManager was created");
+        //System.out.println("FileManager was created"); // in log!
+
     }
 
     public <T> void Save(T value, String path) {
@@ -25,7 +29,8 @@ public class FileManager {
             } catch (IOException ex) {
                 System.out.println(ex.getMessage());
             }
-            System.out.println("The file has been written");
+            //System.out.println("The file has been written");
+            logger.log(Level.INFO, "The file " + path + " has been written");
         }
     }
 
