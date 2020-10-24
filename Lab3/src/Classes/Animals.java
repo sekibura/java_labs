@@ -1,16 +1,26 @@
 package Classes;
 
+import Classes.Managers.MyLogger;
+import sun.rmi.runtime.Log;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public abstract class Animals {
     private String name;
     private  int age;
     private float weight;
+    private final static Logger logger=MyLogger.GetLogger();
 //constructors----------------------------
     public Animals(){
+
+        logger.log(Level.INFO,"New animal created!");
         setAge(0);
         setName("Empty");
         setWeight(0);
     }
     public Animals(String name,int age, float weight){
+        logger.log(Level.INFO,"New animal created!");
         setAge(age);
         setName(name);
         setWeight(weight);

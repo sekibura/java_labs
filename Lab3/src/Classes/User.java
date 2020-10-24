@@ -1,18 +1,25 @@
 package Classes;
 
+import Classes.Managers.MyLogger;
+
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class User implements Serializable {
     private String Login;
     private String password;
     private TypeGroup group;
     private boolean DebugMode;
+    private final static Logger logger=MyLogger.GetLogger();
 
     public User(String login_,String password_,TypeGroup group_){
         Login =login_;
         password=password_;
         group=group_;
         DebugMode=false;
+        logger.log(Level.INFO,"New user was created.");
+
     }
 
     public String getLogin() {

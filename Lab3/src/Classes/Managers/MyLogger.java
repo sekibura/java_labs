@@ -28,5 +28,13 @@ public class MyLogger {
         return logger;
     }
 
+    public static void OffLogger(){
+        logger.setLevel(Level.OFF);
+    }
+    public static void OnLogger(){
+        Setup();
+    }
+
+
 
 }

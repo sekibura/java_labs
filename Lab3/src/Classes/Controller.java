@@ -1,20 +1,20 @@
 package Classes;
 
 import Classes.Managers.LoginManager;
+import Classes.Managers.MyLogger;
 import sun.rmi.runtime.Log;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 
 public class Controller {
-    View view = null;
     Model model = null;
     LoginManager loginManager;
+    private final static Logger logger= MyLogger.GetLogger();
 
     public Controller() {
-        view = new View();
         System.out.println("Classes.Controller init");
-
     }
 
 
@@ -32,10 +32,10 @@ public class Controller {
             while (true) {
                 int input = 0;
                 if (loginManager.getCurrent_user().getGroup() == TypeGroup.root) {
-                    view.MainMenuRoot();
+                    View.MainMenuRoot();
                     input = InputDigit(0, 12);
                 } else {
-                    view.MainMenuUser();
+                    View.MainMenuUser();
                     input = InputDigit(0, 10);
                 }
 
@@ -69,7 +69,7 @@ public class Controller {
                         model.LoadForest();
                         break;
                     case 10:
-                        view.DisplayInfo(loginManager.getCurrent_user().getSettings());
+                        View.DisplayInfo(loginManager.getCurrent_user().getSettings());
                         break;
                     case 0:
                         System.exit(0);
@@ -80,7 +80,7 @@ public class Controller {
         }
     }
 
-    public int InputDigit(int min, int max) {
+    public static int InputDigit(int min, int max) {
         System.out.println("Enter...\n");
         Scanner scanner = new Scanner(System.in);
         String inputValue = scanner.nextLine();
@@ -107,17 +107,17 @@ public class Controller {
         return true;
     }
 
-    public String InputString() {
+    public static String InputString() {
 //        System.out.println("Please enter " + message + " .");
         Scanner scanner = new Scanner(System.in);
         String inputValue = scanner.nextLine();
         while (inputValue.isEmpty()) {
-            view.DisplayInfo("\nEmpty! Try again!\n");
+            View.DisplayInfo("\nEmpty! Try again!\n");
         }
         return inputValue;
     }
 
-    public float InputFloat(float min, float max) {
+    public static float InputFloat(float min, float max) {
         Scanner scanner = new Scanner(System.in);
         float result = min - 1;
         System.out.println("Enter...\n");
@@ -136,7 +136,7 @@ public class Controller {
         return result;
     }
 
-    public boolean InputBool() {
+    public static boolean InputBool() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter 1 (True), or 0 (False).");
         int result = InputDigit(0, 1);

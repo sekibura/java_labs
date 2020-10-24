@@ -12,8 +12,8 @@ public class Main {
         Controller controller = new Controller();
         Model model=new Model();
         controller.setModel(model);
-        model.setController(controller);
-        LoginManager loginManager=new LoginManager(controller);
+//        model.setController(controller);
+        LoginManager loginManager=new LoginManager();
         controller.setLoginManager(loginManager);
         controller.StartWork();
 

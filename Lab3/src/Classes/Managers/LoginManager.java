@@ -3,30 +3,26 @@ package Classes.Managers;
 import Classes.*;
 
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class LoginManager {
-    private Paths paths;
-    private View view;
-    private Controller controller;
     private User current_user;
     private Vector<User> users;
-    private FileManager fileManager;
 
-    public LoginManager(Controller controller_) {
-        System.out.println("Login manager was created!");
+    private final static Logger logger=MyLogger.GetLogger();
+
+    public LoginManager() {
+        logger.log(Level.INFO, "Login manager was created!");
         users = new Vector<User>(0);
         current_user = null;
-        view = new View();
-        controller = controller_;
-        paths = new Paths();
-        fileManager = new FileManager();
     }
 
     public void LoginMenu() {
         LoadUsers();
         while (getCurrent_user() == null) {
-            view.DisplayInfo("Choose option:\n1) Log in\n2) Register\n");
-            int input = controller.InputDigit(1, 2);
+            View.DisplayInfo("Choose option:\n1) Log in\n2) Register\n");
+            int input = Controller.InputDigit(1, 2);
             switch (input) {
                 case 1:
                     LogIn();
@@ -40,12 +36,12 @@ public class LoginManager {
     }
 
     private void Registration() {
-        view.DisplayInfo("Registration:\nEnter login:");
-        String login = controller.InputString();
-        view.DisplayInfo("Enter password:");
-        String password = controller.InputString();
-        view.DisplayInfo("Choose group:\n1) root\n2) user:");
-        int group_ = controller.InputDigit(1, 2);
+        View.DisplayInfo("Registration:\nEnter login:");
+        String login = Controller.InputString();
+        View.DisplayInfo("Enter password:");
+        String password = Controller.InputString();
+        View.DisplayInfo("Choose group:\n1) root\n2) user:");
+        int group_ = Controller.InputDigit(1, 2);
         User NewUser = null;
         switch (group_) {
             case 1:
@@ -58,15 +54,17 @@ public class LoginManager {
                 break;
         }
         users.add(NewUser);
+        logger.log(Level.INFO,"Registration done:"+"<"+login+"> <"+password+">");
         SaveUsers();
+
 
     }
 
     private void LogIn() {
-        view.DisplayInfo("Enter login:");
-        String login = controller.InputString();
-        view.DisplayInfo("Enter password:");
-        String password = controller.InputString();
+        View.DisplayInfo("Enter login:");
+        String login = Controller.InputString();
+        View.DisplayInfo("Enter password:");
+        String password = Controller.InputString();
         LoadUsers();
         boolean IsLogIn = false;
         for (User user : users) {
@@ -77,15 +75,15 @@ public class LoginManager {
             }
         }
         if (IsLogIn) {
-            view.DisplayInfo("Hello, " + current_user.getLogin() + "!");
+            View.DisplayInfo("Hello, " + current_user.getLogin() + "!");
+            logger.log(Level.INFO,"Logined "+current_user.getLogin());
         } else {
-            view.DisplayInfo("Login error!");
-            if(users.size()==0){
-                view.DisplayInfo("User base is empty!");
+            View.DisplayInfo("Login error!");
+            logger.log(Level.INFO,"Error login: <"+login+ "> <"+password+">");
+            if (users.size() == 0) {
+                View.DisplayInfo("User base is empty!");
             }
-
         }
-
     }
 
     private void SetCurrentUser(User user_) {
@@ -97,12 +95,12 @@ public class LoginManager {
     }
 
     public void SaveUsers() {
-        fileManager.<Vector<User>>Save(users, paths.getUsersBasePath());
+        FileManager.<Vector<User>>Save(users, Paths.getUsersBasePath());
     }
 
 
     public void LoadUsers() {
-        SetUsers(fileManager.<Vector<User>>Load(paths.getUsersBasePath()));
+        SetUsers(FileManager.<Vector<User>>Load(Paths.getUsersBasePath()));
     }
 
     private void SetUsers(Vector<User> users_) {

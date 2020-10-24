@@ -1,10 +1,15 @@
 package Classes;
+import Classes.Managers.MyLogger;
+
 import java.io.Serializable;
+import java.util.logging.Logger;
+
 public abstract class Plants implements Serializable{
     private String name;
     private float height;
     private int age;
     private boolean haveFruit;
+    private final static Logger logger= MyLogger.GetLogger();
 
     public Plants(){
         setName("Empty");

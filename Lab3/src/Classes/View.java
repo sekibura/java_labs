@@ -1,16 +1,26 @@
 package Classes;
 
-public class View {
+import Classes.Managers.MyLogger;
 
-    public View(){
-        System.out.println("Init view");
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public  class View {
+    private final static Logger logger=MyLogger.GetLogger();
+
+    public View() {
+//        logger = MyLogger.GetLogger();
+//        logger.log(Level.INFO,"Init view");
+//        System.out.println("Init view");
     }
-    public void DisplayInfo(String value){
+
+    public static void DisplayInfo(String value) {
         System.out.println("************");
         System.out.println(value);
         System.out.println("************");
     }
-    public void MainMenu(){
+
+    public static void MainMenu() {
         System.out.println("*** Menu ***");
         System.out.println("1) Add predator");
         System.out.println("2) Add grass");
@@ -25,7 +35,7 @@ public class View {
         System.out.println("0) Exit");
     }
 
-    public void MainMenuRoot(){
+    public static void MainMenuRoot() {
         System.out.println("*** Menu ***");
         System.out.println("1) Add predator");
         System.out.println("2) Add grass");
@@ -42,7 +52,8 @@ public class View {
         System.out.println("11) Debug");
         System.out.println("12) AutoTests");
     }
-    public void MainMenuUser(){
+
+    public static void MainMenuUser() {
         System.out.println("*** Menu ***");
         System.out.println("1) Add predator");
         System.out.println("2) Add grass");
