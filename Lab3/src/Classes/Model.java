@@ -46,7 +46,7 @@ public class Model {
         forest.AddPredator(name, weight, age, have_claws);
     }
 
-    public  void AddHerbivore() {
+    public void AddHerbivore() {
         View.DisplayInfo("Enter herbivore`s name");
         String name = Controller.InputString();
         View.DisplayInfo("Enter herbivore`s weight");
@@ -72,7 +72,7 @@ public class Model {
         forest.AddGrass(name, height, age, fruit, flowers);
     }
 
-    public  void AddTree() {
+    public void AddTree() {
         View.DisplayInfo("Enter tree`s name");
         String name = Controller.InputString();
         View.DisplayInfo("Enter tree`s height");
@@ -97,7 +97,7 @@ public class Model {
         }
     }
 
-    public  void ToEatGrass() {
+    public void ToEatGrass() {
         Vector<Animals> animals = forest.getAnimals();
         for (Object object : animals) {
             if (object.getClass() == Herbivore.class) {
@@ -106,19 +106,19 @@ public class Model {
         }
     }
 
-    public  void PrintForest() {
+    public void PrintForest() {
         forest.PrintAll();
     }
 
-    public  void SaveForest() {
+    public void SaveForest() {
         forest.SaveForest();
     }
 
-    public  void LoadForest() {
+    public void LoadForest() {
         forest.LoadForest();
     }
 
-    public  void SwitchDebug() {
+    public void SwitchDebug() {
         if (LoginManager.getCurrent_user().isDebugMode()) { // if debug True -> switch to False
             MyLogger.OffLogger();
             LoginManager.getCurrent_user().setDebugMode(false);
@@ -130,5 +130,19 @@ public class Model {
         LoginManager.SaveUsers();
     }
 
+    public void SwitchTests() {
+        if (LoginManager.getCurrent_user().isAutotests()) { // if  True -> switch to False
+            //TODO
+            //switch autotests
+            //
+            LoginManager.getCurrent_user().setAutotests(false);
+        } else {
+            //TODO
+            //switch autotests
+            //
+            LoginManager.getCurrent_user().setAutotests(true);
+        }
+        LoginManager.SaveUsers();
+    }
 
 }

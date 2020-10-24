@@ -10,15 +10,16 @@ public class User implements Serializable {
     private String Login;
     private String password;
     private TypeGroup group;
-    private boolean DebugMode;
-    private final static Logger logger=MyLogger.GetLogger();
+    private boolean DebugMode, Autotests;
+    private final static Logger logger = MyLogger.GetLogger();
 
-    public User(String login_,String password_,TypeGroup group_){
-        Login =login_;
-        password=password_;
-        group=group_;
-        DebugMode=true;
-        logger.log(Level.INFO,"New user was created.");
+    public User(String login_, String password_, TypeGroup group_) {
+        Login = login_;
+        password = password_;
+        group = group_;
+        DebugMode = true;
+        Autotests=true;
+        logger.log(Level.INFO, "New user was created.");
 
     }
 
@@ -33,16 +34,17 @@ public class User implements Serializable {
     public TypeGroup getGroup() {
         return group;
     }
-    private String getGroupString(){
-        if(getGroup()==TypeGroup.root){
+
+    private String getGroupString() {
+        if (getGroup() == TypeGroup.root) {
             return "root";
-        }
-        else {
+        } else {
             return "user";
         }
     }
-    public String getSettings(){
-        return "Login:"+getLogin()+"\nPassword:"+getPassword()+"\nGroup:"+getGroupString();
+
+    public String getSettings() {
+        return "Login:" + getLogin() + "\nPassword:" + getPassword() + "\nGroup:" + getGroupString();
     }
 
     public void setDebugMode(boolean debugMode) {
@@ -53,5 +55,12 @@ public class User implements Serializable {
         return DebugMode;
     }
 
+    public boolean isAutotests() {
+        return Autotests;
+    }
+
+    public void setAutotests(boolean autotests) {
+        Autotests = autotests;
+    }
 }
 

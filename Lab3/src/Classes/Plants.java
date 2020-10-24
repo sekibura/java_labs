@@ -65,4 +65,7 @@ public abstract class Plants implements Serializable{
         System.out.println("Age- "+ getAge());
         System.out.println("Have Fruit? - "+ isHaveFruit());
     }
+    public String ToString(){
+        return "Class"+getClass()+"\nName - "+getName()+"\nHeight - "+ getHeight()+"\nAge- "+ getAge()+"\nHave Fruit? - "+ isHaveFruit();
+    }
 }

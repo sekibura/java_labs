@@ -58,7 +58,13 @@ public  class View {
             System.out.println("11) Switch on Debug");
         }
 
-        System.out.println("12) AutoTests");
+        if(LoginManager.getCurrent_user().isAutotests()){
+            System.out.println("12) Switch off Autotests");
+        }
+        else {
+            System.out.println("12) Switch on Autotests");
+        }
+
     }
 
     public static void MainMenuUser() {
