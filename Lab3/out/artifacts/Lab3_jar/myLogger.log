@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1251" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-24T20:21:07</date>
+  <millis>1603560067957</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-24T20:21:08</date>
+  <millis>1603560068000</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+<record>
+  <date>2020-10-24T20:21:08</date>
+  <millis>1603560068070</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
