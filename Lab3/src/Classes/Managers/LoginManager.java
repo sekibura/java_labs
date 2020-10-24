@@ -7,8 +7,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class LoginManager {
-    private User current_user;
-    private Vector<User> users;
+    private static User current_user;
+    private static Vector<User> users;
 
     private final static Logger logger=MyLogger.GetLogger();
 
@@ -18,7 +18,7 @@ public class LoginManager {
         current_user = null;
     }
 
-    public void LoginMenu() {
+    public static void LoginMenu() {
         LoadUsers();
         while (getCurrent_user() == null) {
             View.DisplayInfo("Choose option:\n1) Log in\n2) Register\n");
@@ -35,7 +35,7 @@ public class LoginManager {
         }
     }
 
-    private void Registration() {
+    private static void Registration() {
         View.DisplayInfo("Registration:\nEnter login:");
         String login = Controller.InputString();
         View.DisplayInfo("Enter password:");
@@ -58,9 +58,10 @@ public class LoginManager {
         SaveUsers();
 
 
+
     }
 
-    private void LogIn() {
+    private static void LogIn() {
         View.DisplayInfo("Enter login:");
         String login = Controller.InputString();
         View.DisplayInfo("Enter password:");
@@ -77,6 +78,11 @@ public class LoginManager {
         if (IsLogIn) {
             View.DisplayInfo("Hello, " + current_user.getLogin() + "!");
             logger.log(Level.INFO,"Logined "+current_user.getLogin());
+
+            //Mute logger if in settings logger-off;
+            if(!current_user.isDebugMode()){
+                MyLogger.OffLogger();
+            }
         } else {
             View.DisplayInfo("Login error!");
             logger.log(Level.INFO,"Error login: <"+login+ "> <"+password+">");
@@ -84,26 +90,27 @@ public class LoginManager {
                 View.DisplayInfo("User base is empty!");
             }
         }
+
     }
 
-    private void SetCurrentUser(User user_) {
+    private static void SetCurrentUser(User user_) {
         current_user = user_;
     }
 
-    public User getCurrent_user() {
+    public static User getCurrent_user() {
         return current_user;
     }
 
-    public void SaveUsers() {
+    public static void SaveUsers() {
         FileManager.<Vector<User>>Save(users, Paths.getUsersBasePath());
     }
 
 
-    public void LoadUsers() {
+    public static void LoadUsers() {
         SetUsers(FileManager.<Vector<User>>Load(Paths.getUsersBasePath()));
     }
 
-    private void SetUsers(Vector<User> users_) {
+    private static void SetUsers(Vector<User> users_) {
         if (users_ != null) {
             users = users_;
         }

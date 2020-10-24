@@ -1,5 +1,6 @@
 package Classes;
 
+import Classes.Managers.LoginManager;
 import Classes.Managers.MyLogger;
 
 import java.util.logging.Level;
@@ -49,7 +50,14 @@ public  class View {
         System.out.println("10) Print user settings");
         System.out.println("0) Exit");
         System.out.println("\n***Root menu***\n");
-        System.out.println("11) Debug");
+
+        if(LoginManager.getCurrent_user().isDebugMode()){
+            System.out.println("11) Switch off Debug");
+        }
+        else {
+            System.out.println("11) Switch on Debug");
+        }
+
         System.out.println("12) AutoTests");
     }
 

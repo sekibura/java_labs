@@ -871,3 +871,1089 @@
   <message>Logined login</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-24T16:23:56</date>
+  <millis>1603545836487</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:23:56</date>
+  <millis>1603545836520</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:23:56</date>
+  <millis>1603545836555</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:24:01</date>
+  <millis>1603545841612</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:24:01</date>
+  <millis>1603545841613</millis>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>LogIn</method>
+  <thread>1</thread>
+  <message>Logined login</message>
+</record>
+<record>
+  <date>2020-10-24T16:24:21</date>
+  <millis>1603545861650</millis>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Animals</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New animal created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:24:21</date>
+  <millis>1603545861651</millis>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>AddPredator</method>
+  <thread>1</thread>
+  <message>New predator was added to forest!</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-24T16:34:33</date>
+  <millis>1603546473958</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:34:33</date>
+  <millis>1603546473990</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:34:34</date>
+  <millis>1603546474022</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:34:43</date>
+  <millis>1603546483872</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:34:43</date>
+  <millis>1603546483873</millis>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>LogIn</method>
+  <thread>1</thread>
+  <message>Logined login</message>
+</record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-24T16:35:22</date>
+  <millis>1603546522433</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:35:22</date>
+  <millis>1603546522464</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:35:22</date>
+  <millis>1603546522497</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:35:27</date>
+  <millis>1603546527405</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:35:27</date>
+  <millis>1603546527405</millis>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>LogIn</method>
+  <thread>1</thread>
+  <message>Logined login</message>
+</record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-24T16:35:42</date>
+  <millis>1603546542108</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:35:42</date>
+  <millis>1603546542139</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:35:42</date>
+  <millis>1603546542140</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>File not found</message>
+</record>
+<record>
+  <date>2020-10-24T16:35:48</date>
+  <millis>1603546548114</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>File not found</message>
+</record>
+<record>
+  <date>2020-10-24T16:35:48</date>
+  <millis>1603546548115</millis>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>LogIn</method>
+  <thread>1</thread>
+  <message>Error login: &lt;d&gt; &lt;d&gt;</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-24T16:36:25</date>
+  <millis>1603546585269</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:36:25</date>
+  <millis>1603546585302</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:36:25</date>
+  <millis>1603546585304</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>File not found</message>
+</record>
+<record>
+  <date>2020-10-24T16:36:29</date>
+  <millis>1603546589018</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>File not found</message>
+</record>
+<record>
+  <date>2020-10-24T16:36:29</date>
+  <millis>1603546589019</millis>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>LogIn</method>
+  <thread>1</thread>
+  <message>Error login: &lt;a&gt; &lt;a&gt;</message>
+</record>
+<record>
+  <date>2020-10-24T16:36:37</date>
+  <millis>1603546597723</millis>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.User</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New user was created.</message>
+</record>
+<record>
+  <date>2020-10-24T16:36:37</date>
+  <millis>1603546597723</millis>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>Registration</method>
+  <thread>1</thread>
+  <message>Registration done:&lt;login&gt; &lt;123&gt;</message>
+</record>
+<record>
+  <date>2020-10-24T16:36:37</date>
+  <millis>1603546597724</millis>
+  <sequence>7</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>CreateFile</method>
+  <thread>1</thread>
+  <message>File created: users</message>
+</record>
+<record>
+  <date>2020-10-24T16:36:37</date>
+  <millis>1603546597753</millis>
+  <sequence>8</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Save</method>
+  <thread>1</thread>
+  <message>The file D:\институт\3 КУРС\Java\java_labs\Lab3\users has been written</message>
+</record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-24T16:37:54</date>
+  <millis>1603546674335</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:37:54</date>
+  <millis>1603546674366</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:37:54</date>
+  <millis>1603546674402</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:37:59</date>
+  <millis>1603546679425</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:37:59</date>
+  <millis>1603546679425</millis>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>LogIn</method>
+  <thread>1</thread>
+  <message>Logined login</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-24T16:40:51</date>
+  <millis>1603546851092</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:40:51</date>
+  <millis>1603546851123</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:40:51</date>
+  <millis>1603546851155</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:40:56</date>
+  <millis>1603546856115</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:40:56</date>
+  <millis>1603546856115</millis>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>LogIn</method>
+  <thread>1</thread>
+  <message>Logined login</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-24T16:40:58</date>
+  <millis>1603546858749</millis>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>CreateFile</method>
+  <thread>1</thread>
+  <message>File already exists</message>
+</record>
+<record>
+  <date>2020-10-24T16:40:58</date>
+  <millis>1603546858752</millis>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Save</method>
+  <thread>1</thread>
+  <message>The file D:\институт\3 КУРС\Java\java_labs\Lab3\users has been written</message>
+</record>
+<record>
+  <date>2020-10-24T16:41:01</date>
+  <millis>1603546861696</millis>
+  <sequence>7</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>FileManager was created</message>
+</record>
+<record>
+  <date>2020-10-24T16:41:01</date>
+  <millis>1603546861699</millis>
+  <sequence>8</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Animals</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New animal created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:41:01</date>
+  <millis>1603546861701</millis>
+  <sequence>9</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Animals</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New animal created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:41:01</date>
+  <millis>1603546861701</millis>
+  <sequence>10</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Animals</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New animal created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:41:01</date>
+  <millis>1603546861701</millis>
+  <sequence>11</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:41:01</date>
+  <millis>1603546861702</millis>
+  <sequence>12</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>SetAnimals</method>
+  <thread>1</thread>
+  <message>Animals vector was update.</message>
+</record>
+<record>
+  <date>2020-10-24T16:41:01</date>
+  <millis>1603546861705</millis>
+  <sequence>13</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Error initializing stream java.io.InvalidClassException: Classes.Plants; local class incompatible: stream classdesc serialVersionUID = -8782589468830432422, local class serialVersionUID = 3752526745072034478</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-24T16:41:53</date>
+  <millis>1603546913644</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:41:53</date>
+  <millis>1603546913676</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:41:53</date>
+  <millis>1603546913709</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:41:58</date>
+  <millis>1603546918411</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:41:58</date>
+  <millis>1603546918411</millis>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>LogIn</method>
+  <thread>1</thread>
+  <message>Logined login</message>
+</record>
+<record>
+  <date>2020-10-24T16:42:00</date>
+  <millis>1603546920942</millis>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>FileManager was created</message>
+</record>
+<record>
+  <date>2020-10-24T16:42:00</date>
+  <millis>1603546920943</millis>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>File not found</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-24T16:45:32</date>
+  <millis>1603547132087</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:45:32</date>
+  <millis>1603547132118</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:45:32</date>
+  <millis>1603547132166</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:45:38</date>
+  <millis>1603547138718</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:45:38</date>
+  <millis>1603547138719</millis>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>LogIn</method>
+  <thread>1</thread>
+  <message>Logined login</message>
+</record>
+<record>
+  <date>2020-10-24T16:45:48</date>
+  <millis>1603547148233</millis>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>FileManager was created</message>
+</record>
+<record>
+  <date>2020-10-24T16:45:48</date>
+  <millis>1603547148233</millis>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>File not found</message>
+</record>
+<record>
+  <date>2020-10-24T16:45:48</date>
+  <millis>1603547148234</millis>
+  <sequence>7</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>Classes.Forest</class>
+  <method>SetAnimals</method>
+  <thread>1</thread>
+  <message>Set animals</message>
+  <exception>
+    <message>java.lang.NullPointerException</message>
+    <frame>
+      <class>java.util.Vector</class>
+      <method>addAll</method>
+      <line>889</line>
+    </frame>
+    <frame>
+      <class>Classes.Forest</class>
+      <method>SetAnimals</method>
+      <line>69</line>
+    </frame>
+    <frame>
+      <class>Classes.Forest</class>
+      <method>LoadForest</method>
+      <line>130</line>
+    </frame>
+    <frame>
+      <class>Classes.Model</class>
+      <method>LoadForest</method>
+      <line>118</line>
+    </frame>
+    <frame>
+      <class>Classes.Controller</class>
+      <method>StartWork</method>
+      <line>67</line>
+    </frame>
+    <frame>
+      <class>Classes.Main</class>
+      <method>main</method>
+      <line>18</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2020-10-24T16:45:48</date>
+  <millis>1603547148234</millis>
+  <sequence>8</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>File not found</message>
+</record>
+<record>
+  <date>2020-10-24T16:45:48</date>
+  <millis>1603547148234</millis>
+  <sequence>9</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>Classes.Forest</class>
+  <method>SetPlants</method>
+  <thread>1</thread>
+  <message>Set plants</message>
+  <exception>
+    <message>java.lang.NullPointerException</message>
+    <frame>
+      <class>java.util.Vector</class>
+      <method>addAll</method>
+      <line>889</line>
+    </frame>
+    <frame>
+      <class>Classes.Forest</class>
+      <method>SetPlants</method>
+      <line>83</line>
+    </frame>
+    <frame>
+      <class>Classes.Forest</class>
+      <method>LoadForest</method>
+      <line>131</line>
+    </frame>
+    <frame>
+      <class>Classes.Model</class>
+      <method>LoadForest</method>
+      <line>118</line>
+    </frame>
+    <frame>
+      <class>Classes.Controller</class>
+      <method>StartWork</method>
+      <line>67</line>
+    </frame>
+    <frame>
+      <class>Classes.Main</class>
+      <method>main</method>
+      <line>18</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2020-10-24T16:45:48</date>
+  <millis>1603547148235</millis>
+  <sequence>10</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>LoadForest</method>
+  <thread>1</thread>
+  <message>Forest was loaded.</message>
+</record>
+<record>
+  <date>2020-10-24T16:46:09</date>
+  <millis>1603547169447</millis>
+  <sequence>11</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Animals</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New animal created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:46:09</date>
+  <millis>1603547169447</millis>
+  <sequence>12</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>AddPredator</method>
+  <thread>1</thread>
+  <message>New predator was added to forest!</message>
+</record>
+<record>
+  <date>2020-10-24T16:46:48</date>
+  <millis>1603547208643</millis>
+  <sequence>13</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>AddGrass</method>
+  <thread>1</thread>
+  <message>New grass was added to forest!</message>
+</record>
+<record>
+  <date>2020-10-24T16:47:00</date>
+  <millis>1603547220583</millis>
+  <sequence>14</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>FileManager was created</message>
+</record>
+<record>
+  <date>2020-10-24T16:47:00</date>
+  <millis>1603547220583</millis>
+  <sequence>15</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>CreateFile</method>
+  <thread>1</thread>
+  <message>File created: plants</message>
+</record>
+<record>
+  <date>2020-10-24T16:47:00</date>
+  <millis>1603547220589</millis>
+  <sequence>16</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Save</method>
+  <thread>1</thread>
+  <message>The file D:\институт\3 КУРС\Java\java_labs\Lab3\plants has been written</message>
+</record>
+<record>
+  <date>2020-10-24T16:47:00</date>
+  <millis>1603547220590</millis>
+  <sequence>17</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>CreateFile</method>
+  <thread>1</thread>
+  <message>File created: animals</message>
+</record>
+<record>
+  <date>2020-10-24T16:47:00</date>
+  <millis>1603547220592</millis>
+  <sequence>18</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Save</method>
+  <thread>1</thread>
+  <message>The file D:\институт\3 КУРС\Java\java_labs\Lab3\animals has been written</message>
+</record>
+<record>
+  <date>2020-10-24T16:47:00</date>
+  <millis>1603547220592</millis>
+  <sequence>19</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>SaveForest</method>
+  <thread>1</thread>
+  <message>Forest was saved.</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-24T16:47:35</date>
+  <millis>1603547255455</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:47:35</date>
+  <millis>1603547255488</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:47:35</date>
+  <millis>1603547255528</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:47:41</date>
+  <millis>1603547261578</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:47:41</date>
+  <millis>1603547261578</millis>
+  <sequence>4</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>LogIn</method>
+  <thread>1</thread>
+  <message>Logined login</message>
+</record>
+<record>
+  <date>2020-10-24T16:47:44</date>
+  <millis>1603547264541</millis>
+  <sequence>5</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>FileManager was created</message>
+</record>
+<record>
+  <date>2020-10-24T16:47:44</date>
+  <millis>1603547264545</millis>
+  <sequence>6</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Animals</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New animal created!</message>
+</record>
+<record>
+  <date>2020-10-24T16:47:44</date>
+  <millis>1603547264545</millis>
+  <sequence>7</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:47:44</date>
+  <millis>1603547264545</millis>
+  <sequence>8</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>SetAnimals</method>
+  <thread>1</thread>
+  <message>Animals vector was update.</message>
+</record>
+<record>
+  <date>2020-10-24T16:47:44</date>
+  <millis>1603547264550</millis>
+  <sequence>9</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.FileManager</class>
+  <method>Load</method>
+  <thread>1</thread>
+  <message>Loading has been done!</message>
+</record>
+<record>
+  <date>2020-10-24T16:47:44</date>
+  <millis>1603547264550</millis>
+  <sequence>10</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>SetPlants</method>
+  <thread>1</thread>
+  <message>Plants vector was update.</message>
+</record>
+<record>
+  <date>2020-10-24T16:47:44</date>
+  <millis>1603547264550</millis>
+  <sequence>11</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>LoadForest</method>
+  <thread>1</thread>
+  <message>Forest was loaded.</message>
+</record>
+</log>

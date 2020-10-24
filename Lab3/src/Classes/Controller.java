@@ -38,8 +38,6 @@ public class Controller {
                     View.MainMenuUser();
                     input = InputDigit(0, 10);
                 }
-
-
                 switch (input) {
                     case 1:
                         model.AddPredator();
@@ -70,6 +68,12 @@ public class Controller {
                         break;
                     case 10:
                         View.DisplayInfo(loginManager.getCurrent_user().getSettings());
+                        break;
+                    case 11:
+                        model.SwitchDebug();
+                        break;
+                    case 12:
+                        View.DisplayInfo("Autotests!");
                         break;
                     case 0:
                         System.exit(0);

@@ -1,5 +1,6 @@
 package Classes;
 
+import Classes.Managers.LoginManager;
 import Classes.Managers.MyLogger;
 import Classes.child_classes.Herbivore;
 import Classes.child_classes.Predator;
@@ -8,14 +9,14 @@ import java.util.Vector;
 import java.util.logging.Logger;
 
 public class Model {
-    private Forest forest ;
-    private final static Logger logger= MyLogger.GetLogger();
+    private Forest forest;
+    private final static Logger logger = MyLogger.GetLogger();
 //    Controller controller;
     //View view ;
 
-    public Model(){
-        forest=new Forest();
-       // view=new View();
+    public Model() {
+        forest = new Forest();
+        // view=new View();
         System.out.println("Init model");
 
 //        forest.AddGrass("Travka", 12, 1, false, false);
@@ -45,7 +46,7 @@ public class Model {
         forest.AddPredator(name, weight, age, have_claws);
     }
 
-    public void AddHerbivore() {
+    public  void AddHerbivore() {
         View.DisplayInfo("Enter herbivore`s name");
         String name = Controller.InputString();
         View.DisplayInfo("Enter herbivore`s weight");
@@ -71,7 +72,7 @@ public class Model {
         forest.AddGrass(name, height, age, fruit, flowers);
     }
 
-    public void AddTree() {
+    public  void AddTree() {
         View.DisplayInfo("Enter tree`s name");
         String name = Controller.InputString();
         View.DisplayInfo("Enter tree`s height");
@@ -87,33 +88,47 @@ public class Model {
         forest.AddTree(name, age, height, fruit, color, radius);
     }
 
-    public void ToHunt(){
-        Vector<Animals> animals =forest.getAnimals();
-        for (Object object: animals){
-            if (object.getClass()==Predator.class){
+    public void ToHunt() {
+        Vector<Animals> animals = forest.getAnimals();
+        for (Object object : animals) {
+            if (object.getClass() == Predator.class) {
                 ((Predator) object).ToHunt(forest);
             }
         }
     }
-    public void ToEatGrass(){
-        Vector<Animals> animals =forest.getAnimals();
-        for (Object object: animals){
-            if (object.getClass()== Herbivore.class){
+
+    public  void ToEatGrass() {
+        Vector<Animals> animals = forest.getAnimals();
+        for (Object object : animals) {
+            if (object.getClass() == Herbivore.class) {
                 ((Herbivore) object).ToEat(forest);
             }
         }
     }
-    public void PrintForest(){
+
+    public  void PrintForest() {
         forest.PrintAll();
     }
 
-    public void SaveForest(){
+    public  void SaveForest() {
         forest.SaveForest();
     }
-    public void LoadForest(){
+
+    public  void LoadForest() {
         forest.LoadForest();
     }
 
+    public  void SwitchDebug() {
+        if (LoginManager.getCurrent_user().isDebugMode()) { // if debug True -> switch to False
+            MyLogger.OffLogger();
+            LoginManager.getCurrent_user().setDebugMode(false);
+
+        } else {
+            MyLogger.OnLogger();
+            LoginManager.getCurrent_user().setDebugMode(true);
+        }
+        LoginManager.SaveUsers();
+    }
 
 
 }

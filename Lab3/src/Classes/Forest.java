@@ -64,14 +64,33 @@ public class Forest implements Serializable {
     }
 
     private void SetAnimals(Vector<Animals>value){
-        animals.clear();
-        animals.addAll(value);
-        logger.log(Level.INFO,"Animals vector was update.");
+        try{
+            animals.clear();
+            animals.addAll(value);
+            logger.log(Level.INFO,"Animals vector was update.");
+        }
+        catch (Exception e){
+            logger.log(Level.WARNING,"Set animals",e);
+            if (value==null){
+                View.DisplayInfo("Animals base error!");
+            }
+        }
+
     }
     private void SetPlants(Vector<Plants>value){
-        plants.clear();
-        plants.addAll(value);
-        logger.log(Level.INFO,"Plants vector was update.");
+        try{
+            plants.clear();
+            plants.addAll(value);
+            logger.log(Level.INFO,"Plants vector was update.");
+        }
+        catch (Exception e)
+        {
+            logger.log(Level.WARNING,"Set plants",e);
+            if (value==null){
+                View.DisplayInfo("Plants base error!");
+            }
+        }
+
     }
 
     public int getNumberOfAnimals(){

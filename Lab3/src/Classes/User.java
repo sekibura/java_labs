@@ -17,7 +17,7 @@ public class User implements Serializable {
         Login =login_;
         password=password_;
         group=group_;
-        DebugMode=false;
+        DebugMode=true;
         logger.log(Level.INFO,"New user was created.");
 
     }
@@ -52,5 +52,6 @@ public class User implements Serializable {
     public boolean isDebugMode() {
         return DebugMode;
     }
+
 }
 
