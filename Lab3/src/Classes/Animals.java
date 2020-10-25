@@ -1,12 +1,14 @@
 package Classes;
 
 import Classes.Managers.MyLogger;
+import Classes.child_classes.Predator;
 import sun.rmi.runtime.Log;
 
+import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public abstract class Animals {
+public abstract class Animals implements Serializable {
     private String name;
     private int age;
     private float weight;
@@ -63,6 +65,11 @@ public abstract class Animals {
     }
 
     public String ToString() {
-        return "Class" + getClass() + "\nName - " + getName() + "\nWeight - " + getWeight() + "\nAge- " + getAge();
+        return "\nClass - " + getClass() + "\nName - " + getName() + "\nWeight - " + getWeight() + "\nAge- " + getAge();
     }
+
+    public boolean IsEqual(Animals animal) {
+        return ((animal.getWeight() == this.getWeight()) && (animal.getName().equals(this.getName())) && (animal.getAge() == this.getAge()));
+    }
+
 }

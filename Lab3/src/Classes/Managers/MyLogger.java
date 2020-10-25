@@ -15,7 +15,7 @@ public class MyLogger {
         logger.addHandler(ch);
 
         try {
-            FileHandler fileHandler = new FileHandler("myLogger.log",true);
+            FileHandler fileHandler = new FileHandler("myLogger.log", true);
             fileHandler.setLevel(Level.ALL);
             logger.addHandler(fileHandler);
         } catch (
@@ -24,17 +24,18 @@ public class MyLogger {
         }
         return logger;
     }
-    public static Logger GetLogger(){
+
+    public static Logger GetLogger() {
         return logger;
     }
 
-    public static void OffLogger(){
+    public static void OffLogger() {
         logger.setLevel(Level.OFF);
     }
-    public static void OnLogger(){
+
+    public static void OnLogger() {
         Setup();
     }
-
 
 
 }

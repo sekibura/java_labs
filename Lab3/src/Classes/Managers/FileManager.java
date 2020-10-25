@@ -41,11 +41,11 @@ public class FileManager {
             value = (T) oi.readObject();
             oi.close();
             fi.close();
-            logger.log(Level.INFO, "Loading has been done!");
+            logger.log(Level.INFO, "Loading " + path + " has been done!");
         } catch (FileNotFoundException e) {
-            logger.log(Level.WARNING, "File not found");
+            logger.log(Level.WARNING, "File " + path + " not found");
         } catch (IOException e) {
-            logger.log(Level.WARNING, "Error initializing stream " + e);
+            logger.log(Level.WARNING, "Error initializing stream ", e);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -59,7 +59,7 @@ public class FileManager {
                 logger.log(Level.INFO, "File created: " + myObj.getName());
                 return true;
             } else {
-                logger.log(Level.INFO, "File already exists");
+                logger.log(Level.INFO, "File" + path + "already exists");
                 return true;
             }
         } catch (IOException e) {

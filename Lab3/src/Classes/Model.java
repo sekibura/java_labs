@@ -19,14 +19,14 @@ public class Model {
         // view=new View();
         System.out.println("Init model");
 
-//        forest.AddGrass("Travka", 12, 1, false, false);
-//        forest.AddGrass("Oduvanchik", 12, 1, false, true);
-//        forest.AddTree("Berezka", 50, 15, false, "white and black", 20);
-//        forest.AddHerbivore("Kozel", 2, 40, "Travka");
-//        Predator tiger = new Predator("Tiger", 50, 4, true);
-//        Herbivore horse= new Herbivore("Horse",3,100,"Travka");
-//        forest.<Predator>AddAnimal(tiger);
-//        forest.<Herbivore>AddAnimal(horse);
+        forest.AddGrass("Travka", 12, 1, false, false);
+        forest.AddGrass("Oduvanchik", 12, 1, false, true);
+        forest.AddTree("Berezka", 50, 15, false, "white and black", 20);
+        forest.AddHerbivore("Kozel", 2, 40, "Travka");
+        Predator tiger = new Predator("Tiger", 50, 4, true);
+        Herbivore horse = new Herbivore("Horse", 3, 100, "Travka");
+        forest.<Predator>AddAnimal(tiger);
+        forest.<Herbivore>AddAnimal(horse);
     }
 //    public void setController(Controller controller1){
 //        controller=controller1;
@@ -90,20 +90,27 @@ public class Model {
 
     public void ToHunt() {
         Vector<Animals> animals = forest.getAnimals();
+        Predator predator = null;
         for (Object object : animals) {
             if (object.getClass() == Predator.class) {
-                ((Predator) object).ToHunt(forest);
+                predator = (Predator) object;
+                break;
+                //                ((Predator) object).ToHunt(forest);
             }
         }
+        predator.ToHunt(forest);
     }
 
     public void ToEatGrass() {
         Vector<Animals> animals = forest.getAnimals();
+        Herbivore herbivore = null;
         for (Object object : animals) {
             if (object.getClass() == Herbivore.class) {
-                ((Herbivore) object).ToEat(forest);
+                herbivore = (Herbivore) object;
+//                ((Herbivore) object).ToEat(forest);
             }
         }
+        herbivore.ToEat(forest);
     }
 
     public void PrintForest() {
@@ -143,6 +150,10 @@ public class Model {
             LoginManager.getCurrent_user().setAutotests(true);
         }
         LoginManager.SaveUsers();
+    }
+
+    public Forest GetForest(){
+        return forest;
     }
 
 }

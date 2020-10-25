@@ -2,6 +2,7 @@ package Classes.child_classes;
 
 import Classes.Animals;
 import Classes.Forest;
+import Classes.View;
 
 import java.io.Serializable;
 import java.util.Vector;
@@ -27,19 +28,23 @@ public class Predator extends Animals implements Serializable {
     }
 
     public void ToHunt(Forest forest) {
-        Vector<Animals> animals=forest.getAnimals();
-        Object prey=null;
-        boolean isStarve=true;
+        Vector<Animals> animals = forest.getAnimals();
+        Object prey = null;
+        boolean isStarve = true;
         for (Object animal : animals) {
-            if(((Animals)animal).getWeight()<this.getWeight()) { // if prey have is less
+            if (((Animals) animal).getWeight() < this.getWeight()) { // if prey have is less
                 //animals.remove(animal); // removing prey
-                prey=animal;
-                System.out.println(((Animals) animal).getName()+" был съеден хищником - "+this.getName());
-                isStarve=false;
+                prey = animal;
+//                System.out.println(((Animals) animal).getName()+" was eaten by - "+this.getName());
+                View.DisplayInfo(((Animals) animal).getName() + " was eaten by - " + this.getName());
+                isStarve = false;
                 break;
             }
         }
-        if (isStarve){System.out.println("Жертва не найдена!");}
+        if (isStarve) {
+            View.DisplayInfo("No food!");
+//            System.out.println("No food!");
+        }
         animals.remove(prey);
     }
 
@@ -50,5 +55,13 @@ public class Predator extends Animals implements Serializable {
 
     public boolean isHave_claws() {
         return have_claws;
+    }
+
+    public String ToString() {
+        return "\nClass - " + getClass() + "\nName - " + getName() + "\nWeight - " + getWeight() + "\nAge- " + getAge() + "\nHave claws? - " + isHave_claws();
+    }
+
+    public boolean IsEqual(Predator predator) {
+        return ((predator.getWeight() == this.getWeight()) && (predator.getName().equals(this.getName())) && (predator.getAge() == this.getAge()) && (predator.isHave_claws() == this.isHave_claws()));
     }
 }

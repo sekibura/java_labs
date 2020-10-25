@@ -18,7 +18,7 @@ public class User implements Serializable {
         password = password_;
         group = group_;
         DebugMode = true;
-        Autotests=true;
+        Autotests = true;
         logger.log(Level.INFO, "New user was created.");
 
     }

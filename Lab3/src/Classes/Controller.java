@@ -5,13 +5,14 @@ import Classes.Managers.MyLogger;
 import sun.rmi.runtime.Log;
 
 import java.util.Scanner;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
 public class Controller {
     Model model = null;
     LoginManager loginManager;
-    private final static Logger logger= MyLogger.GetLogger();
+    private final static Logger logger = MyLogger.GetLogger();
 
     public Controller() {
         System.out.println("Classes.Controller init");
@@ -73,9 +74,12 @@ public class Controller {
                         model.SwitchDebug();
                         break;
                     case 12:
-                        View.DisplayInfo("Autotests!");
+//                        View.DisplayInfo("Autotests!");
+                        model.SwitchTests();
                         break;
                     case 0:
+                        model.SaveForest();
+                        logger.log(Level.INFO,"Exit");
                         System.exit(0);
                         break;
 

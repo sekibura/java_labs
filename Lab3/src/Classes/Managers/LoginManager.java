@@ -10,7 +10,7 @@ public class LoginManager {
     private static User current_user;
     private static Vector<User> users;
 
-    private final static Logger logger=MyLogger.GetLogger();
+    private final static Logger logger = MyLogger.GetLogger();
 
     public LoginManager() {
         logger.log(Level.INFO, "Login manager was created!");
@@ -54,9 +54,8 @@ public class LoginManager {
                 break;
         }
         users.add(NewUser);
-        logger.log(Level.INFO,"Registration done:"+"<"+login+"> <"+password+">");
+        logger.log(Level.INFO, "Registration done:" + "<" + login + "> <" + password + ">");
         SaveUsers();
-
 
 
     }
@@ -77,15 +76,15 @@ public class LoginManager {
         }
         if (IsLogIn) {
             View.DisplayInfo("Hello, " + current_user.getLogin() + "!");
-            logger.log(Level.INFO,"Logined "+current_user.getLogin());
+            logger.log(Level.INFO, "Logined " + current_user.getLogin());
 
             //Mute logger if in settings logger-off;
-            if(!current_user.isDebugMode()){
+            if (!current_user.isDebugMode()) {
                 MyLogger.OffLogger();
             }
         } else {
             View.DisplayInfo("Login error!");
-            logger.log(Level.INFO,"Error login: <"+login+ "> <"+password+">");
+            logger.log(Level.INFO, "Error login: " + login + " " + password + "");
             if (users.size() == 0) {
                 View.DisplayInfo("User base is empty!");
             }

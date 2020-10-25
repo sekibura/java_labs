@@ -7,7 +7,8 @@ import java.io.Serializable;
 public class Tree extends Plants implements Serializable {
     private String bark_color;  // цвет коры
     private float trunk_radius; // радиус ствола
-//constructors-----------------------
+
+    //constructors-----------------------
     public Tree() {
         super();
         setBark_color("None");
@@ -19,7 +20,8 @@ public class Tree extends Plants implements Serializable {
         setBark_color(bark_color);
         setTrunk_radius(trunk_radius);
     }
-//getters-----------------------------
+
+    //getters-----------------------------
     public float getTrunk_radius() {
         return trunk_radius;
     }
@@ -27,7 +29,8 @@ public class Tree extends Plants implements Serializable {
     public String getBark_color() {
         return bark_color;
     }
-//setters----------------------------------------------
+
+    //setters----------------------------------------------
     public void setBark_color(String bark_color) {
         this.bark_color = bark_color;
     }
@@ -35,15 +38,25 @@ public class Tree extends Plants implements Serializable {
     public void setTrunk_radius(float trunk_radius) {
         this.trunk_radius = trunk_radius;
     }
-//-------------------------------------------------------
-public void print(){
-    System.out.println("Class"+getClass());
-    System.out.println("Name - "+getName());
-    System.out.println("Height - "+ getHeight());
-    System.out.println("Age- "+ getAge());
-    System.out.println("Have fruit? - "+isHaveFruit());
-    System.out.println("Bark color - "+getBark_color());
-    System.out.println("Trunk radius - "+getTrunk_radius());
-}
+
+    //-------------------------------------------------------
+    public void print() {
+        System.out.println("Class" + getClass());
+        System.out.println("Name - " + getName());
+        System.out.println("Height - " + getHeight());
+        System.out.println("Age- " + getAge());
+        System.out.println("Have fruit? - " + isHaveFruit());
+        System.out.println("Bark color - " + getBark_color());
+        System.out.println("Trunk radius - " + getTrunk_radius());
+    }
+
+    public String ToString() {
+        return "\nClass - " + getClass() + "\nName - " + getName() + "\nHeight - " + getHeight() + "\nAge- " + getAge() + "\nHave Fruit? - " + isHaveFruit() + "\nBark color - " + getBark_color() + "\nTrunk radius - " + getTrunk_radius();
+    }
+
+    public boolean IsEqual(Tree tree) {
+        return ((tree.getName().equals(this.getName())) && (tree.getAge() == this.getAge()) && (tree.isHaveFruit() == this.isHaveFruit()) && (tree.getTrunk_radius() == this.getTrunk_radius()));
+    }
+
 }
 

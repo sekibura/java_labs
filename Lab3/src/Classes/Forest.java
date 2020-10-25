@@ -21,8 +21,8 @@ public class Forest implements Serializable {
 
     public Forest() {
 
-        plants = new Vector<>(1);
-        animals = new Vector<>(1);
+        plants = new Vector<>(0);
+        animals = new Vector<>(0);
         paths = new Paths();
         logger.log(Level.INFO, "New forest was created!");
     }
@@ -67,28 +67,30 @@ public class Forest implements Serializable {
     }
 
     private void SetAnimals(Vector<Animals> value) {
-        try {
-            animals.clear();
-            animals.addAll(value);
-            logger.log(Level.INFO, "Animals vector was update.");
-        } catch (Exception e) {
-            logger.log(Level.WARNING, "Set animals", e);
-            if (value == null) {
-                View.DisplayInfo("Animals base error!");
+        if (value == null) {
+            View.DisplayInfo("Animals base empty!");
+        } else {
+            try {
+                animals.clear();
+                animals.addAll(value);
+                logger.log(Level.INFO, "Animals vector was update.");
+            } catch (Exception e) {
+                logger.log(Level.WARNING, "Set animals", e);
             }
         }
-
     }
 
     private void SetPlants(Vector<Plants> value) {
-        try {
-            plants.clear();
-            plants.addAll(value);
-            logger.log(Level.INFO, "Plants vector was update.");
-        } catch (Exception e) {
-            logger.log(Level.WARNING, "Set plants", e);
-            if (value == null) {
-                View.DisplayInfo("Plants base error!");
+        if (value == null) {
+            View.DisplayInfo("Plants base empty!");
+        } else {
+            try {
+                plants.clear();
+                plants.addAll(value);
+                logger.log(Level.INFO, "Plants vector was update.");
+            } catch (Exception e) {
+                logger.log(Level.WARNING, "Set plants", e);
+
             }
         }
 
@@ -134,8 +136,13 @@ public class Forest implements Serializable {
 
     public void LoadForest() {
         FileManager fm = new FileManager();
-        SetAnimals((Vector<Animals>) fm.<Vector<Animals>>Load(paths.getAnimalBasePath()));
-        SetPlants((Vector<Plants>) fm.<Vector<Plants>>Load(paths.getPlantsBasePath()));
+        SetAnimals(fm.<Vector<Animals>>Load(paths.getAnimalBasePath()));
+        SetPlants(fm.<Vector<Plants>>Load(paths.getPlantsBasePath()));
         logger.log(Level.INFO, "Forest was loaded.");
+    }
+
+    public void ClearForest(){
+        animals.clear();
+        plants.clear();
     }
 }

@@ -6,8 +6,8 @@ import Classes.Managers.MyLogger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public  class View {
-    private final static Logger logger=MyLogger.GetLogger();
+public class View {
+    private final static Logger logger = MyLogger.GetLogger();
 
     public View() {
 //        logger = MyLogger.GetLogger();
@@ -33,7 +33,7 @@ public  class View {
         System.out.println("8) Save forest");
         System.out.println("9) Load forest");
         System.out.println("10) Print user settings");
-        System.out.println("0) Exit");
+        System.out.println("0) Exit and Save");
     }
 
     public static void MainMenuRoot() {
@@ -48,20 +48,18 @@ public  class View {
         System.out.println("8) Save forest");
         System.out.println("9) Load forest");
         System.out.println("10) Print user settings");
-        System.out.println("0) Exit");
-        System.out.println("\n***Root menu***\n");
+        System.out.println("0) Exit and Save");
+        System.out.println("\n***Root menu***");
 
-        if(LoginManager.getCurrent_user().isDebugMode()){
+        if (LoginManager.getCurrent_user().isDebugMode()) {
             System.out.println("11) Switch off Debug");
-        }
-        else {
+        } else {
             System.out.println("11) Switch on Debug");
         }
 
-        if(LoginManager.getCurrent_user().isAutotests()){
+        if (LoginManager.getCurrent_user().isAutotests()) {
             System.out.println("12) Switch off Autotests");
-        }
-        else {
+        } else {
             System.out.println("12) Switch on Autotests");
         }
 
@@ -79,6 +77,6 @@ public  class View {
         System.out.println("8) Save forest");
         System.out.println("9) Load forest");
         System.out.println("10) Print user settings");
-        System.out.println("0) Exit");
+        System.out.println("0) Exit and Save");
     }
 }
