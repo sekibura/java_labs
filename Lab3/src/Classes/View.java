@@ -2,6 +2,7 @@ package Classes;
 
 import Classes.Managers.LoginManager;
 import Classes.Managers.MyLogger;
+import Classes.Managers.Testing;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,11 +17,19 @@ public class View {
     }
 
     public static void DisplayInfo(String value) {
-        System.out.println("************");
-        System.out.println(value);
-        System.out.println("************");
+        if(!Testing.isIsTesting()) {
+            System.out.println("************");
+            System.out.println(value);
+            System.out.println("************");
+        }
     }
 
+    public static void DisplayTestInfo(String value) {
+
+            System.out.println("************TEST RESULTS************");
+            System.out.println(value);
+            System.out.println("************");
+    }
     public static void MainMenu() {
         System.out.println("*** Menu ***");
         System.out.println("1) Add predator");

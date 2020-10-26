@@ -12,6 +12,7 @@ public class Predator extends Animals implements Serializable {
 
     public Predator() {
         super();
+        setHave_claws(false);
     }
 
     public Predator(String name, float weight, int age, boolean have_claws) {

@@ -6,6 +6,7 @@ import Classes.child_classes.Herbivore;
 import Classes.child_classes.Predator;
 
 import java.util.Vector;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Model {
@@ -17,16 +18,9 @@ public class Model {
     public Model() {
         forest = new Forest();
         // view=new View();
-        System.out.println("Init model");
+//        System.out.println("Init model");
+        logger.log(Level.INFO,"Init model.");
 
-        forest.AddGrass("Travka", 12, 1, false, false);
-        forest.AddGrass("Oduvanchik", 12, 1, false, true);
-        forest.AddTree("Berezka", 50, 15, false, "white and black", 20);
-        forest.AddHerbivore("Kozel", 2, 40, "Travka");
-        Predator tiger = new Predator("Tiger", 50, 4, true);
-        Herbivore horse = new Herbivore("Horse", 3, 100, "Travka");
-        forest.<Predator>AddAnimal(tiger);
-        forest.<Herbivore>AddAnimal(horse);
     }
 //    public void setController(Controller controller1){
 //        controller=controller1;
@@ -154,6 +148,17 @@ public class Model {
 
     public Forest GetForest(){
         return forest;
+    }
+
+    public void AddStarterPack(){
+        forest.AddGrass("Travka", 12, 1, false, false);
+        forest.AddGrass("Oduvanchik", 12, 1, false, true);
+        forest.AddTree("Berezka", 50, 15, false, "white and black", 20);
+        forest.AddHerbivore("Kozel", 2, 40, "Travka");
+        Predator tiger = new Predator("Tiger", 50, 4, true);
+        Herbivore horse = new Herbivore("Horse", 3, 100, "Travka");
+        forest.<Predator>AddAnimal(tiger);
+        forest.<Herbivore>AddAnimal(horse);
     }
 
 }

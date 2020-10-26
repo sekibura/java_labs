@@ -2,6 +2,7 @@ package Classes;
 
 import Classes.Managers.LoginManager;
 import Classes.Managers.MyLogger;
+import Classes.Managers.Testing;
 import sun.rmi.runtime.Log;
 
 import java.util.Scanner;
@@ -15,7 +16,9 @@ public class Controller {
     private final static Logger logger = MyLogger.GetLogger();
 
     public Controller() {
-        System.out.println("Classes.Controller init");
+
+//        System.out.println("Classes.Controller init");
+        logger.log(Level.INFO,"Controller init");
     }
 
 
@@ -30,6 +33,8 @@ public class Controller {
     public void StartWork() {
         if (model != null) {
             loginManager.LoginMenu();
+            Testing tester=new Testing(model);
+            tester.ToTest();
             while (true) {
                 int input = 0;
                 if (loginManager.getCurrent_user().getGroup() == TypeGroup.root) {

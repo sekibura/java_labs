@@ -14,6 +14,7 @@ public class Herbivore extends Animals implements Serializable {
 
     public Herbivore() {
         super();
+        setPreferred_plants("none");
     }
 
     public Herbivore(String name, int age, float weight, String preferred_plants) {

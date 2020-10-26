@@ -9,6 +9,7 @@ public class Grass extends Plants implements Serializable {
 
     public Grass() {
         super();
+        setIs_flowers(false);
     }
 
     public Grass(String name, float height, int age, boolean haveFruit, boolean is_flowers) {

@@ -5,6 +5,10 @@ public class Paths {
     private static String PlantsBase = ".\\plants";
     private static String UsersBase = ".\\users";
 
+    private static String AnimalBaseTest = ".\\animalsTest";
+    private static String PlantsBaseTest = ".\\plantsTest";
+    private static String UsersBaseTest = ".\\usersTest";
+
     public static String getAnimalBasePath() {
         return AnimalBase;
     }

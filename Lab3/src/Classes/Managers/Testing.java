@@ -1,17 +1,17 @@
 package Classes.Managers;
 
-import Classes.Animals;
-import Classes.Forest;
-import Classes.Model;
-import Classes.View;
+import Classes.*;
+import Classes.child_classes.Grass;
+import Classes.child_classes.Herbivore;
 import Classes.child_classes.Predator;
+import Classes.child_classes.Tree;
 
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Testing {
-    private boolean IsTesting = false;
+    private static boolean IsTesting = false;
     private Model model = null;
     private static final Logger logger = MyLogger.GetLogger();
 
@@ -21,22 +21,34 @@ public class Testing {
     }
 
     public void ToTest() {
-        setIsTesting(true);
-//        TOdo
-        //тестирование добавления хищника
-        TestAddPredator();
-//        тестирование добавления травы
-        //тестирование добавления млекопитающего
-        //тестирование добавления дерева
+        if (LoginManager.getCurrent_user().isAutotests()) {
 
-        setIsTesting(false);
+            setIsTesting(true);
+//  TOdo
+    //тестирование добавления хищника
+//            TestAddPredator();
+////        тестирование добавления травы
+//            TestAddGrass();
+//            //тестирование добавления млекопитающего
+//            TestAddHerbivore();
+//            //тестирование добавления дерева
+//            TestAddTree();
+//            //To hunt
+//            TestToHunt();
+//            // To eat plant
+//            TestToEat();
+
+            View.DisplayTestInfo("AddPredator - " + TestAddPredator() + "\nAddGrass - " + TestAddGrass() + "\nAddHerbivore - " + TestAddHerbivore() + "\nToHunt - " + TestToHunt() + "\nToEat - " + TestToEat());
+            model.GetForest().ClearForest();
+            setIsTesting(false);
+        }
     }
 
-    public boolean isIsTesting() {
+    public static boolean isIsTesting() {
         return IsTesting;
     }
 
-    public void setIsTesting(boolean isTesting) {
+    public static void setIsTesting(boolean isTesting) {
         IsTesting = isTesting;
     }
 
@@ -44,10 +56,90 @@ public class Testing {
         boolean result = true;
         Forest forest = model.GetForest();
         forest.AddAnimal(new Predator());
-        Vector<Animals> animals=forest.getAnimals();
-        if(!animals.elementAt(0).IsEqual(new Predator())){
-            result=false;
+        Vector<Animals> animals = forest.getAnimals();
+//        View.DisplayInfo(animals.elementAt(0).ToString());
+        if (!animals.elementAt(0).IsEqual(new Predator())) {
+            result = false;
         }
+        logger.log(Level.INFO, "Test AddPredator - " + result);
+        forest.ClearForest();
+        return result;
+    }
+
+    private boolean TestAddGrass() {
+        boolean result = true;
+        Forest forest = model.GetForest();
+        forest.AddPlant(new Grass());
+        Vector<Plants> plants = forest.getPlants();
+//        View.DisplayInfo(plants.elementAt(0).ToString());
+        if (!plants.elementAt(0).IsEqual(new Grass())) {
+            result = false;
+        }
+        logger.log(Level.INFO, "Test AddGrass - " + result);
+        forest.ClearForest();
+        return result;
+    }
+
+    private boolean TestAddHerbivore() {
+        boolean result = true;
+        Forest forest = model.GetForest();
+        forest.AddAnimal(new Herbivore());
+        Vector<Animals> animals = forest.getAnimals();
+//        View.DisplayInfo(plants.elementAt(0).ToString());
+        if (!animals.elementAt(0).IsEqual(new Herbivore())) {
+            result = false;
+        }
+        logger.log(Level.INFO, "Test AddHerbivore - " + result);
+        forest.ClearForest();
+        return result;
+    }
+
+    private boolean TestAddTree() {
+        boolean result = true;
+        Forest forest = model.GetForest();
+        forest.AddPlant(new Tree());
+        Vector<Plants> plants = forest.getPlants();
+//        View.DisplayInfo(plants.elementAt(0).ToString());
+        if (!plants.elementAt(0).IsEqual(new Tree())) {
+            result = false;
+        }
+        logger.log(Level.INFO, "Test AddTree - " + result);
+        forest.ClearForest();
+        return result;
+    }
+
+    private boolean TestToHunt() {
+        boolean result = true;
+        Forest forest = model.GetForest();
+        forest.AddAnimal(new Predator("Predator", 100, 100, true));
+        forest.AddAnimal(new Predator("Prey", 10, 10, false));
+        Vector<Animals> animals = forest.getAnimals();
+        model.ToHunt();
+//        View.DisplayInfo(plants.elementAt(0).ToString());
+        if (!animals.elementAt(0).IsEqual(new Predator("Predator", 100, 100, true)) && (animals.size() != 1)) {
+            result = false;
+        }
+        logger.log(Level.INFO, "Test ToHunt - " + result);
+        forest.ClearForest();
+
+        return result;
+    }
+
+    private boolean TestToEat() {
+        boolean result = true;
+        Forest forest = model.GetForest();
+        forest.AddAnimal(new Herbivore("Horse", 100, 100, "Travka"));
+        forest.AddPlant(new Grass("NotTravka", 10, 10, false, false));
+        forest.AddPlant(new Grass("Travka", 10, 10, false, false));
+        Vector<Plants> plants = forest.getPlants();
+        model.ToEatGrass();
+//        View.DisplayInfo(plants.elementAt(0).ToString());
+        if (!plants.elementAt(0).IsEqual(new Grass("NotTravka", 10, 10, false, false)) && !(plants.size() == 1)) {
+            result = false;
+        }
+        logger.log(Level.INFO, "Test Eat Grass - " + result);
+        forest.ClearForest();
+
         return result;
     }
 
@@ -59,4 +151,5 @@ public class Testing {
         }
 
     }
+
 }

@@ -2,6 +2,7 @@ package Classes;
 
 import Classes.Managers.LoginManager;
 import Classes.Managers.MyLogger;
+import Classes.Managers.Testing;
 import Classes.child_classes.Herbivore;
 import Classes.child_classes.Predator;
 
