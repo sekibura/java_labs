@@ -1,10 +1,15 @@
 package Classes;
 
+import Classes.Managers.LogLevel;
 import Classes.Managers.LoginManager;
 import Classes.Managers.MyLogger;
+import Classes.Managers.OnlyMyLogger;
 import Classes.child_classes.Herbivore;
 import Classes.child_classes.Predator;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Random;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,23 +17,15 @@ import java.util.logging.Logger;
 public class Model {
     private Forest forest;
     private final static Logger logger = MyLogger.GetLogger();
-//    Controller controller;
-    //View view ;
+
 
     public Model() {
         forest = new Forest();
-        // view=new View();
-//        System.out.println("Init model");
-        logger.log(Level.INFO,"Init model.");
-
+        logger.log(Level.INFO, "Init model.");
     }
-//    public void setController(Controller controller1){
-//        controller=controller1;
-//    }
 
 
     public void AddPredator() {
-
         View.DisplayInfo("Enter predator`s name");
         String name = Controller.InputString();
         View.DisplayInfo("Enter predator`s weight");
@@ -89,7 +86,6 @@ public class Model {
             if (object.getClass() == Predator.class) {
                 predator = (Predator) object;
                 break;
-                //                ((Predator) object).ToHunt(forest);
             }
         }
         predator.ToHunt(forest);
@@ -101,7 +97,6 @@ public class Model {
         for (Object object : animals) {
             if (object.getClass() == Herbivore.class) {
                 herbivore = (Herbivore) object;
-//                ((Herbivore) object).ToEat(forest);
             }
         }
         herbivore.ToEat(forest);
@@ -133,24 +128,18 @@ public class Model {
 
     public void SwitchTests() {
         if (LoginManager.getCurrent_user().isAutotests()) { // if  True -> switch to False
-            //TODO
-            //switch autotests
-            //
             LoginManager.getCurrent_user().setAutotests(false);
         } else {
-            //TODO
-            //switch autotests
-            //
             LoginManager.getCurrent_user().setAutotests(true);
         }
         LoginManager.SaveUsers();
     }
 
-    public Forest GetForest(){
+    public Forest GetForest() {
         return forest;
     }
 
-    public void AddStarterPack(){
+    public void AddStarterPack() {
         forest.AddGrass("Travka", 12, 1, false, false);
         forest.AddGrass("Oduvanchik", 12, 1, false, true);
         forest.AddTree("Berezka", 50, 15, false, "white and black", 20);
@@ -159,6 +148,57 @@ public class Model {
         Herbivore horse = new Herbivore("Horse", 3, 100, "Travka");
         forest.<Predator>AddAnimal(tiger);
         forest.<Herbivore>AddAnimal(horse);
+    }
+
+    // Lab 4______________________________________________________________________
+
+    public void Lab4() {
+        MyLogger.OffLogger();
+//        OnlyMyLogger.Setup("Log.txt");
+        ArrayList<Forest> forestArrayList = new ArrayList<Forest>();
+        LinkedList<Forest> forestLinkedList = new LinkedList<Forest>();
+//        InitCollections(forestArrayList,forestLinkedList,10,100);
+//        forestArrayList.clear();
+//        forestLinkedList.clear();
+//        InitCollections(forestArrayList,forestLinkedList,100,100);
+//        forestArrayList.clear();
+//        forestLinkedList.clear();
+//        InitCollections(forestArrayList,forestLinkedList,1000,100);
+//        forestArrayList.clear();
+//        forestLinkedList.clear();
+//        InitCollections(forestArrayList,forestLinkedList,10000,100);
+//        forestArrayList.clear();
+//        forestLinkedList.clear();
+        InitCollections(forestArrayList, forestLinkedList, 100000, 5);
+        forestArrayList.clear();
+        forestLinkedList.clear();
+    }
+
+    public void InitCollections(ArrayList<Forest> forestArrayList, LinkedList<Forest> forestLinkedList, int CollectionSize, int ForestSize) {
+        OnlyMyLogger.Setup("Log" + CollectionSize + ".txt");
+        ArrayList<Long> times = new ArrayList<Long>(CollectionSize);
+        OnlyMyLogger.log(LogLevel.INFO, "Init collections - " + CollectionSize);
+        Long startTime_ = System.currentTimeMillis();
+        for (int i = 0; i < CollectionSize; i++) {
+            Forest newForest = new Forest();
+            newForest.RandomForest(ForestSize);
+            Long startTime = System.nanoTime();
+            forestArrayList.add(newForest);
+            Long endTime = System.nanoTime() - startTime;
+            times.add(i, endTime);
+            OnlyMyLogger.log(LogLevel.INFO, "ADD, " + i + " = " + endTime);
+        }
+        OnlyMyLogger.log(LogLevel.INFO, "END ADDx" + CollectionSize + " = " + (System.currentTimeMillis() - startTime_) + " ms");
+
+
+        OnlyMyLogger.log(LogLevel.INFO, "Average time = " + (Sum(times) / CollectionSize)+" nano sec");
+    }
+
+    private Long Sum(ArrayList<Long> list) {
+        Long sum = Long.valueOf(0);
+        for (Long d : list)
+            sum += d;
+        return sum;
     }
 
 }

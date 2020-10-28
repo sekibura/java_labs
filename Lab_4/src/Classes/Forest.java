@@ -1,6 +1,7 @@
 package Classes;
 
 import Classes.Managers.MyLogger;
+import Classes.Managers.RandomManager;
 import Classes.child_classes.Grass;
 import Classes.child_classes.Herbivore;
 import Classes.child_classes.Predator;
@@ -25,6 +26,18 @@ public class Forest implements Serializable {
         animals = new Vector<>(0);
         paths = new Paths();
         logger.log(Level.INFO, "New forest was created!");
+    }
+
+    public void RandomForest(int number) {
+//        int PredatorsNumber,HerbivoreNumber,TreeNumber,GrassNumber;
+//        PredatorsNumber= RandomManager.randInt(,max);
+        for (int i = 0; i < number; i++) {
+            AddPredator(RandomManager.generateRandomWords(1)[0],RandomManager.randInt(1,100),RandomManager.randInt(1,100),RandomManager.getRandomBoolean());
+            AddHerbivore(RandomManager.generateRandomWords(1)[0],RandomManager.randInt(1,100),RandomManager.randInt(1,100),RandomManager.generateRandomWords(1)[0]);
+            AddTree(RandomManager.generateRandomWords(1)[0],RandomManager.randInt(1,100),RandomManager.randInt(1,100),RandomManager.getRandomBoolean(),RandomManager.generateRandomWords(1)[0],RandomManager.randInt(1,100));
+            AddGrass(RandomManager.generateRandomWords(1)[0],RandomManager.randInt(1,100),RandomManager.randInt(1,100),RandomManager.getRandomBoolean(),RandomManager.getRandomBoolean());
+        }
+
     }
 
     public void AddPredator(String name, float weight, int age, boolean have_claws) {
@@ -141,7 +154,7 @@ public class Forest implements Serializable {
         logger.log(Level.INFO, "Forest was loaded.");
     }
 
-    public void ClearForest(){
+    public void ClearForest() {
         animals.clear();
         plants.clear();
     }

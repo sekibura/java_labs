@@ -1,8 +1,6 @@
 package Classes;
 
-import Classes.Managers.LoginManager;
-import Classes.Managers.MyLogger;
-import Classes.Managers.Testing;
+import Classes.Managers.*;
 import Classes.child_classes.Herbivore;
 import Classes.child_classes.Predator;
 
@@ -15,10 +13,11 @@ public class Main {
         Controller controller = new Controller();
         Model model = new Model();
         controller.setModel(model);
-//        model.setController(controller);
         LoginManager loginManager = new LoginManager();
         controller.setLoginManager(loginManager);
-        controller.StartWork();
+
+        model.Lab4();
+//        controller.StartWork();
     }
 
 
