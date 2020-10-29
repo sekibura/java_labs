@@ -5,6 +5,7 @@ import Classes.Managers.MyLogger;
 import Classes.Managers.Testing;
 import sun.rmi.runtime.Log;
 
+import java.util.Random;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -161,6 +162,16 @@ public class Controller {
             }
         }
         return true;
+    }
+
+    public static int getRandomNumberInRange(int min, int max) {
+
+        if (min >= max) {
+            throw new IllegalArgumentException("max must be greater than min");
+        }
+
+        Random r = new Random();
+        return r.nextInt((max - min) + 1) + min;
     }
 
 

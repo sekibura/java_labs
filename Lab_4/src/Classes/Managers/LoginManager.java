@@ -21,8 +21,8 @@ public class LoginManager {
     public static void LoginMenu() {
         LoadUsers();
         while (getCurrent_user() == null) {
-            View.DisplayInfo("Choose option:\n1) Log in\n2) Register\n");
-            int input = Controller.InputDigit(1, 2);
+            View.DisplayInfo("Choose option:\n1) Log in\n2) Register\n0) Exit");
+            int input = Controller.InputDigit(0, 2);
             switch (input) {
                 case 1:
                     LogIn();
@@ -30,6 +30,9 @@ public class LoginManager {
                 case 2:
                     Registration();
                     break;
+                case 0:
+                    System.exit(0);
+                    logger.log(Level.INFO, "Exit programm");
 
             }
         }

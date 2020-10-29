@@ -5,6 +5,7 @@ import java.util.logging.*;
 
 public class MyLogger {
     private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+//    private static int ErrorCounter=0;
 
     public static Logger Setup() {
         LogManager.getLogManager().reset();
@@ -36,6 +37,7 @@ public class MyLogger {
     public static void OnLogger() {
         Setup();
     }
+
 
 
 }

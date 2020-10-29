@@ -157,28 +157,33 @@ public class Model {
 //        OnlyMyLogger.Setup("Log.txt");
         ArrayList<Forest> forestArrayList = new ArrayList<Forest>();
         LinkedList<Forest> forestLinkedList = new LinkedList<Forest>();
-//        InitCollections(forestArrayList,forestLinkedList,10,100);
-//        forestArrayList.clear();
-//        forestLinkedList.clear();
-//        InitCollections(forestArrayList,forestLinkedList,100,100);
-//        forestArrayList.clear();
-//        forestLinkedList.clear();
-//        InitCollections(forestArrayList,forestLinkedList,1000,100);
-//        forestArrayList.clear();
-//        forestLinkedList.clear();
-//        InitCollections(forestArrayList,forestLinkedList,10000,100);
-//        forestArrayList.clear();
-//        forestLinkedList.clear();
+        InitCollections(forestArrayList, forestLinkedList, 10, 5);
+        RemoveRandom(forestArrayList, forestLinkedList);
+        forestArrayList.clear();
+        forestLinkedList.clear();
+        InitCollections(forestArrayList, forestLinkedList, 100, 5);
+        RemoveRandom(forestArrayList, forestLinkedList);
+        forestArrayList.clear();
+        forestLinkedList.clear();
+        InitCollections(forestArrayList, forestLinkedList, 1000, 5);
+        RemoveRandom(forestArrayList, forestLinkedList);
+        forestArrayList.clear();
+        forestLinkedList.clear();
+        InitCollections(forestArrayList, forestLinkedList, 10000, 5);
+        RemoveRandom(forestArrayList, forestLinkedList);
+        forestArrayList.clear();
+        forestLinkedList.clear();
         InitCollections(forestArrayList, forestLinkedList, 100000, 5);
+        RemoveRandom(forestArrayList, forestLinkedList);
         forestArrayList.clear();
         forestLinkedList.clear();
     }
 
-    public void InitCollections(ArrayList<Forest> forestArrayList, LinkedList<Forest> forestLinkedList, int CollectionSize, int ForestSize) {
+    private void InitCollections(ArrayList<Forest> forestArrayList, LinkedList<Forest> forestLinkedList, int CollectionSize, int ForestSize) {
         OnlyMyLogger.Setup("Log" + CollectionSize + ".txt");
-        ArrayList<Long> times = new ArrayList<Long>(CollectionSize);
-        OnlyMyLogger.log(LogLevel.INFO, "Init collections - " + CollectionSize);
-        Long startTime_ = System.currentTimeMillis();
+        ArrayList<Long> times = new ArrayList<Long>();
+        OnlyMyLogger.log(LogLevel.INFO, "Init collection ArrayLit - " + CollectionSize);
+//        Long startTime_ = System.currentTimeMillis();
         for (int i = 0; i < CollectionSize; i++) {
             Forest newForest = new Forest();
             newForest.RandomForest(ForestSize);
@@ -188,10 +193,57 @@ public class Model {
             times.add(i, endTime);
             OnlyMyLogger.log(LogLevel.INFO, "ADD, " + i + " = " + endTime);
         }
-        OnlyMyLogger.log(LogLevel.INFO, "END ADDx" + CollectionSize + " = " + (System.currentTimeMillis() - startTime_) + " ms");
+        OnlyMyLogger.log(LogLevel.INFO, "END ADDx" + CollectionSize + " = " + (Sum(times)) + " ns = " + ((float) Sum(times) / 1000000) + "ms");
+        OnlyMyLogger.log(LogLevel.INFO, "Average time = " + (Sum(times) / CollectionSize) + " ns = " + (((float) (Sum(times) / CollectionSize)) / 1000000) + "ms");
 
+        OnlyMyLogger.log(LogLevel.INFO, "Init collection LinkedList - " + CollectionSize);
+        times.clear();
+//        startTime_ = System.currentTimeMillis();
+        for (int i = 0; i < CollectionSize; i++) {
+            Forest newForest = new Forest();
+            newForest.RandomForest(ForestSize);
+            Long startTime = System.nanoTime();
+            forestLinkedList.add(newForest);
+            Long endTime = System.nanoTime() - startTime;
+            times.add(i, endTime);
+            OnlyMyLogger.log(LogLevel.INFO, "ADD, " + i + " = " + endTime);
+        }
+        OnlyMyLogger.log(LogLevel.INFO, "END ADDx" + CollectionSize + " = " + (Sum(times)) + " ns = " + ((float) Sum(times) / 1000000) + "ms");
+        OnlyMyLogger.log(LogLevel.INFO, "Average time = " + (Sum(times) / CollectionSize) + " ns = " + (((float) (Sum(times) / CollectionSize)) / 1000000) + "ms");
 
-        OnlyMyLogger.log(LogLevel.INFO, "Average time = " + (Sum(times) / CollectionSize)+" nano sec");
+    }
+
+    private void RemoveRandom(ArrayList<Forest> forestArrayList, LinkedList<Forest> forestLinkedList) {
+        OnlyMyLogger.Setup("Log" + forestArrayList.size() + ".txt");
+        int first_size=forestArrayList.size();
+        ArrayList<Long> times=new ArrayList<Long>();
+        OnlyMyLogger.log(LogLevel.INFO, "Remove 10% elements from ArrayLit with size = " + first_size);
+        if ((first_size * 0.1) > 0 && ((first_size * 0.1) % 1 == 0)) {
+            for (int i = 0; i < first_size * 0.1; i++) {
+                Long startTime = System.nanoTime();
+                forestArrayList.remove(Controller.getRandomNumberInRange(0, forestArrayList.size()));
+                Long endTime = System.nanoTime() - startTime;
+                times.add(endTime);
+                OnlyMyLogger.log(LogLevel.INFO, "remove, " + i + " = " + endTime);
+            }
+            OnlyMyLogger.log(LogLevel.INFO, "END REMOVEx" + (first_size * 0.1) + " = " + (Sum(times)) + " ns = " + ((float) Sum(times) / 1000000) + "ms");
+            OnlyMyLogger.log(LogLevel.INFO, "Average time = " + (Sum(times) / (first_size * 0.1)) + " ns = " + (((float) (Sum(times) / (first_size * 0.1))) / 1000000) + "ms");
+        }
+
+        first_size=forestLinkedList.size();
+        times.clear();
+        OnlyMyLogger.log(LogLevel.INFO, "Remove 10% elements from LinkedList with size = " + first_size);
+        if ((first_size * 0.1) > 0 && ((first_size * 0.1) % 1 == 0)) {
+            for (int i = 0; i < first_size * 0.1; i++) {
+                Long startTime = System.nanoTime();
+                forestLinkedList.remove(Controller.getRandomNumberInRange(0, forestLinkedList.size()-1));
+                Long endTime = System.nanoTime() - startTime;
+                times.add(endTime);
+                OnlyMyLogger.log(LogLevel.INFO, "remove, " + i + " = " + endTime);
+            }
+            OnlyMyLogger.log(LogLevel.INFO, "END REMOVEx" + (first_size * 0.1) + " = " + (Sum(times)) + " ns = " + ((float) Sum(times) / 1000000) + "ms");
+            OnlyMyLogger.log(LogLevel.INFO, "Average time = " + (Sum(times) / (first_size * 0.1)) + " ns = " + (((float) (Sum(times) / (first_size * 0.1))) / 1000000) + "ms");
+        }
     }
 
     private Long Sum(ArrayList<Long> list) {

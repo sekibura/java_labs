@@ -46,6 +46,9 @@ public class OnlyMyLogger {
     public static int getErrorCount(){
         return ErrorCount;
     }
+    public static void OnExit(){
+        log(LogLevel.INFO,"Error in session = "+getErrorCount());
+    }
 
 
 }

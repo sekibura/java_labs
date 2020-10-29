@@ -46,3 +46,723 @@
   <message>Login manager was created!</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-29T16:03:10</date>
+  <millis>1603976590022</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Controller</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Controller init</message>
+</record>
+<record>
+  <date>2020-10-29T16:03:10</date>
+  <millis>1603976590084</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-29T16:03:10</date>
+  <millis>1603976590085</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Model</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Init model.</message>
+</record>
+<record>
+  <date>2020-10-29T16:03:10</date>
+  <millis>1603976590086</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-29T16:11:12</date>
+  <millis>1603977072801</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Controller</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Controller init</message>
+</record>
+<record>
+  <date>2020-10-29T16:11:12</date>
+  <millis>1603977072847</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-29T16:11:12</date>
+  <millis>1603977072847</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Model</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Init model.</message>
+</record>
+<record>
+  <date>2020-10-29T16:11:12</date>
+  <millis>1603977072849</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-29T16:15:05</date>
+  <millis>1603977305837</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Controller</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Controller init</message>
+</record>
+<record>
+  <date>2020-10-29T16:15:05</date>
+  <millis>1603977305876</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-29T16:15:05</date>
+  <millis>1603977305876</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Model</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Init model.</message>
+</record>
+<record>
+  <date>2020-10-29T16:15:05</date>
+  <millis>1603977305877</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-29T16:15:53</date>
+  <millis>1603977353492</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Controller</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Controller init</message>
+</record>
+<record>
+  <date>2020-10-29T16:15:53</date>
+  <millis>1603977353526</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-29T16:15:53</date>
+  <millis>1603977353526</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Model</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Init model.</message>
+</record>
+<record>
+  <date>2020-10-29T16:15:53</date>
+  <millis>1603977353527</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-29T16:18:30</date>
+  <millis>1603977510647</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Controller</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Controller init</message>
+</record>
+<record>
+  <date>2020-10-29T16:18:30</date>
+  <millis>1603977510683</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-29T16:18:30</date>
+  <millis>1603977510683</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Model</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Init model.</message>
+</record>
+<record>
+  <date>2020-10-29T16:18:30</date>
+  <millis>1603977510684</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-29T16:19:11</date>
+  <millis>1603977551849</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Controller</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Controller init</message>
+</record>
+<record>
+  <date>2020-10-29T16:19:11</date>
+  <millis>1603977551884</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-29T16:19:11</date>
+  <millis>1603977551884</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Model</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Init model.</message>
+</record>
+<record>
+  <date>2020-10-29T16:19:11</date>
+  <millis>1603977551885</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-29T16:19:52</date>
+  <millis>1603977592255</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Controller</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Controller init</message>
+</record>
+<record>
+  <date>2020-10-29T16:19:52</date>
+  <millis>1603977592293</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-29T16:19:52</date>
+  <millis>1603977592294</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Model</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Init model.</message>
+</record>
+<record>
+  <date>2020-10-29T16:19:52</date>
+  <millis>1603977592295</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-29T16:22:58</date>
+  <millis>1603977778400</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Controller</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Controller init</message>
+</record>
+<record>
+  <date>2020-10-29T16:22:58</date>
+  <millis>1603977778448</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-29T16:22:58</date>
+  <millis>1603977778448</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Model</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Init model.</message>
+</record>
+<record>
+  <date>2020-10-29T16:22:58</date>
+  <millis>1603977778449</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-29T16:50:41</date>
+  <millis>1603979441915</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Controller</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Controller init</message>
+</record>
+<record>
+  <date>2020-10-29T16:50:41</date>
+  <millis>1603979441949</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-29T16:50:41</date>
+  <millis>1603979441949</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Model</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Init model.</message>
+</record>
+<record>
+  <date>2020-10-29T16:50:41</date>
+  <millis>1603979441950</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-29T16:52:53</date>
+  <millis>1603979573277</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Controller</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Controller init</message>
+</record>
+<record>
+  <date>2020-10-29T16:52:53</date>
+  <millis>1603979573314</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-29T16:52:53</date>
+  <millis>1603979573314</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Model</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Init model.</message>
+</record>
+<record>
+  <date>2020-10-29T16:52:53</date>
+  <millis>1603979573315</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-29T16:56:23</date>
+  <millis>1603979783596</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Controller</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Controller init</message>
+</record>
+<record>
+  <date>2020-10-29T16:56:23</date>
+  <millis>1603979783633</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-29T16:56:23</date>
+  <millis>1603979783633</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Model</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Init model.</message>
+</record>
+<record>
+  <date>2020-10-29T16:56:23</date>
+  <millis>1603979783634</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-29T16:56:36</date>
+  <millis>1603979796890</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Controller</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Controller init</message>
+</record>
+<record>
+  <date>2020-10-29T16:56:36</date>
+  <millis>1603979796929</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-29T16:56:36</date>
+  <millis>1603979796929</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Model</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Init model.</message>
+</record>
+<record>
+  <date>2020-10-29T16:56:36</date>
+  <millis>1603979796930</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-29T17:44:32</date>
+  <millis>1603982672859</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Controller</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Controller init</message>
+</record>
+<record>
+  <date>2020-10-29T17:44:32</date>
+  <millis>1603982672899</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-29T17:44:32</date>
+  <millis>1603982672899</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Model</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Init model.</message>
+</record>
+<record>
+  <date>2020-10-29T17:44:32</date>
+  <millis>1603982672900</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-29T17:44:44</date>
+  <millis>1603982684185</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Controller</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Controller init</message>
+</record>
+<record>
+  <date>2020-10-29T17:44:44</date>
+  <millis>1603982684226</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-29T17:44:44</date>
+  <millis>1603982684226</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Model</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Init model.</message>
+</record>
+<record>
+  <date>2020-10-29T17:44:44</date>
+  <millis>1603982684227</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-10-29T17:45:35</date>
+  <millis>1603982735893</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Controller</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Controller init</message>
+</record>
+<record>
+  <date>2020-10-29T17:45:35</date>
+  <millis>1603982735925</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-10-29T17:45:35</date>
+  <millis>1603982735925</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Model</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Init model.</message>
+</record>
+<record>
+  <date>2020-10-29T17:45:35</date>
+  <millis>1603982735926</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+</log>
