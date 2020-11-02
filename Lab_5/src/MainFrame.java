@@ -310,7 +310,7 @@ public class MainFrame extends JFrame {
         MainPanel.add(ButtonPanel);
         frame.getContentPane().add(MainPanel);
 //        frame.getContentPane().add(ButtonPanel);
-//        frame.setPreferredSize(new Dimension(1000, 800));
+
 
         frame.pack();
         frame.setVisible(true);
