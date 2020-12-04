@@ -6,7 +6,6 @@ import java.awt.event.*;
 public class MainFrame {
 
 
-
     public static void CreateGUI() {
         JFrame frame = new JFrame("Заказ");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -15,13 +14,22 @@ public class MainFrame {
         MainPanel.setLayout(new BoxLayout(MainPanel, BoxLayout.Y_AXIS));
 
         JPanel TitleTextPanel = new JPanel();
+        JPanel PanelRadioButtons = new JPanel();
+        JPanel SendButtonPanel = new JPanel();
+        JPanel FieldsPanel = new JPanel();
+        JRadioButton HighPriority = new JRadioButton("Высокий приоритет");
+        JRadioButton SecondPriority = new JRadioButton("Средний приоритет");
+        JRadioButton LastPriority = new JRadioButton("Низкий приоритет");
+        ChangeColor(new JPanel[]{MainPanel, TitleTextPanel, FieldsPanel, PanelRadioButtons, SendButtonPanel}, Color.red);
+        ChangeColorButton(new JRadioButton[]{HighPriority, SecondPriority, LastPriority}, Color.red);
 
         JLabel TitleLabel = new JLabel("Окно заказа");
         TitleLabel.setFont(new Font("Arial", Font.BOLD, 20));
         TitleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         TitleTextPanel.add(TitleLabel);
 
-        JPanel FieldsPanel = new JPanel();
+
+
         FieldsPanel.setLayout(new GridLayout(5, 2, 5, 12));
 
         FieldsPanel.add(new JLabel("Фамилия"));
@@ -73,88 +81,81 @@ public class MainFrame {
             public void keyTyped(KeyEvent e) {
                 super.keyTyped(e);
                 char c = e.getKeyChar();
-                if (!Character.isDigit(c) || PhoneTextField.getText().length()>13) {
+                if (!Character.isDigit(c) || PhoneTextField.getText().length() > 13) {
                     e.consume();  // ignore event
                 }
             }
         });
         FieldsPanel.add(new JLabel("Важность заказа"));
-//        JTextField OrderPriorityTextField = new JTextField(30);
-//        FieldsPanel.add(OrderPriorityTextField);
-        JRadioButton HighPriority = new JRadioButton("Высокий приоритет");
+
+
         HighPriority.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MainPanel.setBackground(Color.red);
+                ChangeColor(new JPanel[]{MainPanel, TitleTextPanel, FieldsPanel, PanelRadioButtons, SendButtonPanel}, Color.red);
+                ChangeColorButton(new JRadioButton[]{HighPriority, SecondPriority, LastPriority}, Color.red);
             }
         });
-//        HighPriority.setMnemonic(KeyEvent.VK_B);
-//        HighPriority.setActionCommand();
+
         HighPriority.setSelected(true);
 
-
-        JRadioButton SecondPriority = new JRadioButton("Средний приоритет");
 
         SecondPriority.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MainPanel.setBackground(Color.YELLOW);
+                ChangeColor(new JPanel[]{MainPanel, TitleTextPanel, FieldsPanel, PanelRadioButtons, SendButtonPanel}, Color.yellow);
+                ChangeColorButton(new JRadioButton[]{HighPriority, SecondPriority, LastPriority}, Color.yellow);
             }
         });
-//        rabbitButton.setMnemonic(KeyEvent.VK_R);
-//        rabbitButton.setActionCommand(rabbitString);
 
-        JRadioButton LastPriority = new JRadioButton("Низкий приоритет");
+
+
         LastPriority.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MainPanel.setBackground(Color.green);
+                ChangeColor(new JPanel[]{MainPanel, TitleTextPanel, FieldsPanel, PanelRadioButtons, SendButtonPanel}, Color.green);
+                ChangeColorButton(new JRadioButton[]{HighPriority, SecondPriority, LastPriority}, Color.green);
             }
         });
-//        pigButton.setMnemonic(KeyEvent.VK_P);
-//        pigButton.setActionCommand(pigString);
+
 
         //Group the radio buttons.
         ButtonGroup group = new ButtonGroup();
         group.add(HighPriority);
         group.add(SecondPriority);
         group.add(LastPriority);
-        JPanel PanelRadioButtons=new JPanel();
+
         PanelRadioButtons.setLayout(new BoxLayout(PanelRadioButtons, BoxLayout.Y_AXIS));
         PanelRadioButtons.add(HighPriority);
         PanelRadioButtons.add(SecondPriority);
         PanelRadioButtons.add(LastPriority);
         FieldsPanel.add(PanelRadioButtons);
 
-        JPanel SendButtonPanel = new JPanel();
+
         SendButtonPanel.setLayout(new BoxLayout(SendButtonPanel, BoxLayout.Y_AXIS));
-        JButton SendButton= new JButton("Отправить");
+        JButton SendButton = new JButton("Отправить");
         SendButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String result="";
-                result+=SecondNameTextField.getText()+" "+FirstNameTextField.getText()+" "+FatherNameTextField.getText()+" "+PhoneTextField.getText()+" ";
-                if(HighPriority.isSelected()){
-                    result+="высокий приоритет";
+                if (FirstNameTextField.getText().isEmpty() || SecondNameTextField.getText().isEmpty()||FatherNameTextField.getText().isEmpty()||PhoneTextField.getText().isEmpty()){
+                    JOptionPane.showMessageDialog(frame, "Заполните все поля!");
                 }
-                else if(SecondPriority.isSelected()){
-                    result+="средний приоритет";
+                else{
+                    String result = "";
+                    result += SecondNameTextField.getText() + " " + FirstNameTextField.getText() + " " + FatherNameTextField.getText() + " " + PhoneTextField.getText() + " ";
+                    if (HighPriority.isSelected()) {
+                        result += "высокий приоритет";
+                    } else if (SecondPriority.isSelected()) {
+                        result += "средний приоритет";
+                    } else if (LastPriority.isSelected()) {
+                        result += "низкий приоритет";
+                    }
+                    JOptionPane.showMessageDialog(frame, result);
                 }
-                else if(LastPriority.isSelected()){
-                    result+="низкий приоритет";
-                }
-
-                JOptionPane.showMessageDialog(frame, result);
             }
         });
+
         SendButtonPanel.add(SendButton);
-
-
-
-
-
-
-
         MainPanel.add(TitleTextPanel);
         MainPanel.add(FieldsPanel);
         MainPanel.add(SendButtonPanel);
@@ -165,9 +166,21 @@ public class MainFrame {
         frame.setLocationRelativeTo(null);
     }
 
-}
-enum Priorities{
-    First,
-    Secondary,
-    Last
+    private static void ChangeColor(JPanel[] jpanels, Color color) {
+        for (JPanel i : jpanels) {
+            i.setBackground(color);
+        }
+    }
+
+    private static void ChangeColorButton(JRadioButton[] jbtns, Color color) {
+        for (JRadioButton i : jbtns) {
+            i.setBackground(color);
+        }
+    }
+
+    enum Priorities {
+        First,
+        Secondary,
+        Last
+    }
 }

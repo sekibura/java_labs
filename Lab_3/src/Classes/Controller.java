@@ -39,10 +39,10 @@ public class Controller {
                 int input = 0;
                 if (loginManager.getCurrent_user().getGroup() == TypeGroup.root) {
                     View.MainMenuRoot();
-                    input = InputDigit(0, 12);
+                    input = InputDigit(0, 13);
                 } else {
                     View.MainMenuUser();
-                    input = InputDigit(0, 10);
+                    input = InputDigit(0, 11);
                 }
                 switch (input) {
                     case 1:
@@ -76,9 +76,12 @@ public class Controller {
                         View.DisplayInfo(loginManager.getCurrent_user().getSettings());
                         break;
                     case 11:
-                        model.SwitchDebug();
+                        model.AddStarterPack();
                         break;
                     case 12:
+                        model.SwitchDebug();
+                        break;
+                    case 13:
 //                        View.DisplayInfo("Autotests!");
                         model.SwitchTests();
                         break;

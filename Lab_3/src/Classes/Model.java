@@ -21,6 +21,7 @@ public class Model {
 //        System.out.println("Init model");
         logger.log(Level.INFO,"Init model.");
 
+
     }
 //    public void setController(Controller controller1){
 //        controller=controller1;

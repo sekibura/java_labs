@@ -42,6 +42,7 @@ public class View {
         System.out.println("8) Save forest");
         System.out.println("9) Load forest");
         System.out.println("10) Print user settings");
+        System.out.println("11) Add starter pack");
         System.out.println("0) Exit and Save");
     }
 
@@ -57,19 +58,20 @@ public class View {
         System.out.println("8) Save forest");
         System.out.println("9) Load forest");
         System.out.println("10) Print user settings");
+        System.out.println("11) Add starter pack");
         System.out.println("0) Exit and Save");
         System.out.println("\n***Root menu***");
 
         if (LoginManager.getCurrent_user().isDebugMode()) {
-            System.out.println("11) Switch off Debug");
+            System.out.println("12) Switch off Debug");
         } else {
-            System.out.println("11) Switch on Debug");
+            System.out.println("12) Switch on Debug");
         }
 
         if (LoginManager.getCurrent_user().isAutotests()) {
-            System.out.println("12) Switch off Autotests");
+            System.out.println("13) Switch off Autotests");
         } else {
-            System.out.println("12) Switch on Autotests");
+            System.out.println("13) Switch on Autotests");
         }
 
     }

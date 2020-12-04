@@ -766,3 +766,51 @@
   <message>Login manager was created!</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-12-04T14:05:44</date>
+  <millis>1607079944140</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Controller</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Controller init</message>
+</record>
+<record>
+  <date>2020-12-04T14:05:44</date>
+  <millis>1607079944181</millis>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Forest</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>New forest was created!</message>
+</record>
+<record>
+  <date>2020-12-04T14:05:44</date>
+  <millis>1607079944181</millis>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Model</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Init model.</message>
+</record>
+<record>
+  <date>2020-12-04T14:05:44</date>
+  <millis>1607079944182</millis>
+  <sequence>3</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>Classes.Managers.LoginManager</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Login manager was created!</message>
+</record>
+</log>
