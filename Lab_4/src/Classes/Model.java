@@ -157,26 +157,26 @@ public class Model {
 //        OnlyMyLogger.Setup("Log.txt");
         ArrayList<Forest> forestArrayList = new ArrayList<Forest>();
         LinkedList<Forest> forestLinkedList = new LinkedList<Forest>();
-        InitCollections(forestArrayList, forestLinkedList, 10, 5);
+        InitCollections(forestArrayList, forestLinkedList, 10, 2);
         RemoveRandom(forestArrayList, forestLinkedList);
-        forestArrayList.clear();
-        forestLinkedList.clear();
-        InitCollections(forestArrayList, forestLinkedList, 100, 5);
+        forestArrayList=new ArrayList<Forest>();
+        forestLinkedList=new LinkedList<Forest>();
+        InitCollections(forestArrayList, forestLinkedList, 100, 2);
         RemoveRandom(forestArrayList, forestLinkedList);
-        forestArrayList.clear();
-        forestLinkedList.clear();
-        InitCollections(forestArrayList, forestLinkedList, 1000, 5);
+        forestArrayList = new ArrayList<Forest>();
+        forestLinkedList = new LinkedList<Forest>();
+        InitCollections(forestArrayList, forestLinkedList, 1000, 2);
         RemoveRandom(forestArrayList, forestLinkedList);
-        forestArrayList.clear();
-        forestLinkedList.clear();
-        InitCollections(forestArrayList, forestLinkedList, 10000, 5);
+        forestArrayList = new ArrayList<Forest>();
+        forestLinkedList = new LinkedList<Forest>();
+        InitCollections(forestArrayList, forestLinkedList, 10000, 2);
         RemoveRandom(forestArrayList, forestLinkedList);
-        forestArrayList.clear();
-        forestLinkedList.clear();
-        InitCollections(forestArrayList, forestLinkedList, 100000, 5);
+        forestArrayList = new ArrayList<Forest>();
+        forestLinkedList = new LinkedList<Forest>();
+        InitCollections(forestArrayList, forestLinkedList, 100000, 2);
         RemoveRandom(forestArrayList, forestLinkedList);
-        forestArrayList.clear();
-        forestLinkedList.clear();
+        forestArrayList = new ArrayList<Forest>();
+        forestLinkedList = new LinkedList<Forest>();
     }
 
     private void InitCollections(ArrayList<Forest> forestArrayList, LinkedList<Forest> forestLinkedList, int CollectionSize, int ForestSize) {
@@ -221,7 +221,7 @@ public class Model {
         if ((first_size * 0.1) > 0 && ((first_size * 0.1) % 1 == 0)) {
             for (int i = 0; i < first_size * 0.1; i++) {
                 Long startTime = System.nanoTime();
-                forestArrayList.remove(Controller.getRandomNumberInRange(0, forestArrayList.size()));
+                forestArrayList.remove(Controller.getRandomNumberInRange(0, forestArrayList.size()-1));
                 Long endTime = System.nanoTime() - startTime;
                 times.add(endTime);
                 OnlyMyLogger.log(LogLevel.INFO, "remove, " + i + " = " + endTime);
