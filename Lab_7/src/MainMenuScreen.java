@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainMenuScreen {
     public static void DrawMainMenu(JFrame frame) {
@@ -46,6 +48,18 @@ public class MainMenuScreen {
         ButtonPanel.add(Box.createRigidArea(new Dimension(0, 100)));
         ButtonPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
         ButtonPanel.setBackground(Color.black);
+
+        //press 1 Player btn
+        OnePlrBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //start game
+                System.out.println("button");
+                GameMainFrame gameMainFrame = new GameMainFrame(frame);
+                ;
+
+            }
+        });
 
         MainPanel.add(ButtonPanel);
         //
