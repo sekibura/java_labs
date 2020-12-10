@@ -1,14 +1,43 @@
+import com.sun.org.apache.bcel.internal.Const;
+
 import java.awt.event.KeyEvent;
 
 public class Player extends GameObject {
-    public Player() {
+    private static int count = 0;
+    private int currentPlayer = 0;
+    private int UpButton = 0;
+    private int DownButton = 0;
+    private boolean AIPlayer = false;
+
+    private int ballCoordinateX = 0;
+    private int ballCoordinateY = 0;
+
+    public Player(boolean AIplayer) {
+        this.AIPlayer = AIplayer;
         initialize();
     }
 
     private void initialize() {
+
+        int start_x = 0;
+        int start_y = 0;
+        System.out.println(count);
+        if (count == 0) {
+            UpButton = Constants.FIRST_PLAYER_UP;
+            DownButton = Constants.FIRST_PLAYER_DOWN;
+            start_x = Constants.START_COORDINATE_X_1PLAYER;
+            start_y = Constants.START_COORDINATE_Y_1PLAYER;
+            currentPlayer = 1;
+        } else if (count == 1) {
+            UpButton = Constants.SECOND_PLAYER_UP;
+            DownButton = Constants.SECOND_PLAYER_DOWN;
+            start_x = Constants.START_COORDINATE_X_2PLAYER;
+            start_y = Constants.START_COORDINATE_Y_2PLAYER;
+            currentPlayer = 2;
+        }
+        count++;
         setySpeed(5);
-        int start_x = 30;
-        int start_y = 200;
+
 
         setX(start_x);
         setY(start_y);
@@ -17,6 +46,9 @@ public class Player extends GameObject {
 
     @Override
     public void move() {
+        if (AIPlayer) {
+            AIControl();
+        }
         y += dy;
 //        System.out.println(y);
         if (y > Constants.BOARD_HIGHT - Constants.PLAYER_HIGHT - 40) {
@@ -27,11 +59,31 @@ public class Player extends GameObject {
 
     }
 
+
+    private void AIControl() {
+        if ((currentPlayer == 1) && (ballCoordinateX > Constants.BOARD_WIDTH / 2)) {
+            if ((getY() + Constants.PLAYER_HIGHT / 2 )< ballCoordinateY) {
+                dy = getySpeed();
+            } else {
+                dy = -getySpeed();
+            }
+        } else if ((currentPlayer == 2) && (ballCoordinateX < Constants.BOARD_WIDTH / 2)) {
+            if ((getY() + Constants.PLAYER_HIGHT / 2) < ballCoordinateY) {
+                dy = getySpeed();
+            } else {
+                dy = -getySpeed();
+            }
+        } else {
+            dy = 0;
+        }
+    }
+
+
     public void keyPressed(KeyEvent event) {
         int key = event.getKeyCode();
-        if (key == KeyEvent.VK_UP) {
+        if (key == UpButton) {
             dy = -getySpeed();
-        } else if (key == KeyEvent.VK_DOWN) {
+        } else if (key == DownButton) {
             dy = getySpeed();
         }
     }
@@ -39,12 +91,37 @@ public class Player extends GameObject {
 
     public void keyReleased(KeyEvent event) {
         int key = event.getKeyCode();
-        if (key == KeyEvent.VK_UP) {
+        if (key == UpButton) {
             dy = 0;
-        } else if (key == KeyEvent.VK_DOWN) {
+        } else if (key == DownButton) {
             dy = 0;
         }
     }
 
+    @Override
+    public void restart() {
+        System.out.println("player restart " + count);
+        if (currentPlayer == 1) {
+            System.out.println("player1 restart");
+            setX(Constants.START_COORDINATE_X_1PLAYER);
+            setY(Constants.START_COORDINATE_Y_1PLAYER);
+        } else if (currentPlayer == 2) {
+            System.out.println("player2 restart");
+            setX(Constants.START_COORDINATE_X_2PLAYER);
+            setY(Constants.START_COORDINATE_Y_2PLAYER);
+        }
+        dy = 0;
+    }
 
+    public void setBallCoordinateX(int ballCoordinateX) {
+        this.ballCoordinateX = ballCoordinateX;
+    }
+
+    public void setBallCoordinateY(int ballCoordinateY) {
+        this.ballCoordinateY = ballCoordinateY;
+    }
+
+    public int getCurrentPlayer() {
+        return currentPlayer;
+    }
 }

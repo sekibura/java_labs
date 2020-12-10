@@ -9,11 +9,8 @@ public class GraphFrame {
 
     public static void CreateGUI(double AL[], double LL[], double ALA[], double LLA[], String TitleGraph) {
         JFrame frame = new JFrame(TitleGraph + " graph");
-//        frame.setPreferredSize(new Dimension(800, 800));
-//        frame.setDefaultCloseOperation();
-
         JPanel MainPanel = new JPanel();
-//        MainPanel.setBorder(BorderFactory.createEmptyBorder(25, 25, 25, 25));
+
         MainPanel.setLayout(new BoxLayout(MainPanel, BoxLayout.Y_AXIS));
 
         JLabel TitleText = new JLabel("Average\n RED - ArrayList\n GREEN - LinkedList");
@@ -22,34 +19,19 @@ public class GraphFrame {
         TitleText2.setAlignmentX(Component.CENTER_ALIGNMENT);
 
 
-        //
         JPanel AveragePanel = new JPanel();
         AveragePanel.add(new CoordinateGrid(ALA, LLA));
-//        AveragePanel.setOpaque(true);
-//        AveragePanel.setBorder(BorderFactory.createEmptyBorder(25, 25, 25, 25));
-//        AveragePanel.setPreferredSize(new Dimension(1060, 400));
-//        CoordinateGrid coordinateGrid=new CoordinateGrid();
 
-//        AveragePanel.setLayer(coordinateGrid,1);
-//        AveragePanel.add(coordinateGrid);
-
-//        GraphDraw graphDraw=new GraphDraw(ALA, LLA);
-//        AveragePanel.setLayer(graphDraw,2);
-//        AveragePanel.add(graphDraw);
-
-
-//        AveragePanel.setVisible(true);
 
         JPanel NotAveragePanel = new JPanel();
         NotAveragePanel.add(new CoordinateGrid(AL, LL));
-//        NotAveragePanel.add(new GraphDraw(AL, LL));
+
 
         // last operations
         MainPanel.add(TitleText);
         MainPanel.add(AveragePanel);
         MainPanel.add(TitleText2);
         MainPanel.add(NotAveragePanel);
-//        MainPanel.add(AveragePanel);
         frame.getContentPane().add(MainPanel);
         frame.pack();
         frame.setVisible(true);
@@ -98,6 +80,7 @@ class CoordinateGrid extends JPanel {
         int xValue = 10;// шкала по ОХ 10 - 100000
         float yValue = 0; // шкала по ОУ 100- 0
 
+        //drawing lines of grid and strings
         for (int i = 0; i < NumberPointX; i++) {
             g.drawLine(xV, yV, xV, yV - Height);
             g.drawString(String.valueOf(xValue), xV - 20, yV + 20);
@@ -118,15 +101,14 @@ class CoordinateGrid extends JPanel {
         double PrevYAL = 0;
         double PrevYLL = 0;
 
-//        double toPixels=Math.round(Value/(YScale/Height))
-
+        //drawing graph ArrayList and LinkedList
         if (AL.length == LL.length) {
             for (int i = 0; i < AL.length; i++) {
                 System.out.println("AL[" + i + "]=" + AL[i] + " - " + (YStart + Height - (int) Math.round(AL[i] / ((double) YScale / Height))));
-
+                // drawing ArrayList graph
                 g.setColor(Color.RED);
                 g.drawLine(x, YStart + Height - (int) Math.round(PrevYAL / ((double) YScale / Height)), x + (int) Math.round((double) Width / NumberPointX), YStart + Height - (int) Math.round(AL[i] / ((double) YScale / Height)));//??????????????????????????????????????????????????
-//                g.drawString("*",x + (int) Math.round((double) Width / NumberPointX), YStart+Height-(int)Math.round(AL[i]/((double) YScale/Height)));
+                // drawing LinkedList graph
                 g.setColor(Color.GREEN);
                 g.drawLine(x, YStart + Height - (int) Math.round((double) PrevYLL / ((double) YScale / Height)), x + (int) Math.round((double) Width / NumberPointX), YStart + Height - (int) Math.round(LL[i] / ((double) YScale / Height)));//??????????????????????????????????????????????????
                 PrevYAL = AL[i];
@@ -161,48 +143,6 @@ class CoordinateGrid extends JPanel {
 
 }
 
-//class GraphDraw extends JPanel {
-//
-//    private static final int W = 1060;
-//    private static final int H = 400;
-//    double[] AL, LL;
-//
-//
-//    protected void paintComponent(Graphics g) {
-//        super.paintComponent(g);
-//        g.setColor(Color.BLACK);
-//        int x = 0;
-//        double PrevYAL = 0;
-//        double PrevYLL = 0;
-//
-////        g.drawRect(XStart, 10, 1000, 300);
-//        if (AL.length == LL.length) {
-//            for (int i = 0; i < AL.length; i++) {
-//                g.setColor(Color.RED);
-//                g.drawLine(x, (int) Math.round(PrevYAL), x + 200, (int) Math.round(AL[i]) * 3);//??????????????????????????????????????????????????
-//                g.setColor(Color.GREEN);
-//                g.drawLine(x, (int) Math.round(PrevYLL), x + 200, (int) Math.round(LL[i]) * 3);//??????????????????????????????????????????????????
-//                PrevYAL = AL[i];
-//                PrevYLL = LL[i];
-//                x += 200;
-//            }
-//        }
-//
-//
-//    }
-//
-//    public Dimension getPreferredSize() {
-//        return new Dimension(W, H); // appropriate constants
-//    }
-//
-//    public GraphDraw(double[] AL, double[] LL) {
-//        this.AL = AL;
-//        this.LL = LL;
-////        this.ALAverage=ALAverage;
-////        this.LLAverage=LLAverage;
-//
-//
-//    }
-//}
+
 
 

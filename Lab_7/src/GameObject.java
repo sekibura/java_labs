@@ -4,12 +4,12 @@ public abstract class GameObject {
 
     private boolean isDead;
 
-    protected int x = 0;
-    protected int y = 0;
-    protected int dx = 0;
-    protected int dy = 0;
-    protected int xSpeed = 0;
-    protected int ySpeed = 0;
+    protected int x;
+    protected int y;
+    protected int dx;
+    protected int dy;
+    protected int xSpeed;
+    protected int ySpeed;
 
     public int getxSpeed() {
         return xSpeed;
@@ -29,14 +29,12 @@ public abstract class GameObject {
 
     public abstract void move();
 
-    public abstract void restart();
-
-    public GameObject() {
-        this.isDead = false;
+    public GameObject(){
+    this.isDead=false;
     }
 
-    public void ToDie() {
-        this.isDead = true;
+    public void ToDie(){
+        this.isDead=true;
     }
 
     public int getX() {

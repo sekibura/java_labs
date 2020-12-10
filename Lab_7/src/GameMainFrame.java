@@ -2,16 +2,21 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GameMainFrame extends JFrame {
-    private JFrame frame;
+    public GameMainFrame() {
+        IinitializeLayout();
+    }
 
-    public GameMainFrame(JFrame frame_) {
-        frame = frame_;
-//        frame.setSize(new Dimension(720, 480));
-//        clear menu from frame
-//        frame.getContentPane().removeAll();
-        frame.add(new GamePanel());
-
-
-
+    private void IinitializeLayout() {
+        add(new GamePanel());
+        setTitle(Constants.TITLE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        //set icon frame
+        ImageIcon imageIcon = new ImageIcon(Constants.ICON_PONG_PATH);
+        setIconImage(imageIcon.getImage());
+        //
+        setSize(new Dimension(Constants.BOARD_WIDTH, Constants.BOARD_HIGHT));
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setVisible(true);
     }
 }

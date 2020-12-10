@@ -11,29 +11,8 @@ public class MainFrame extends JFrame {
 
     JTextField jTextField, jTextField1;
 
-//    public MainFrame() {
-//        setSize(this.Width, this.Hight);
-//
-//        JPanel contents = new JPanel(new FlowLayout(FlowLayout.LEFT));
-//        jTextField = new JTextField(15);
-//        jTextField.setToolTipText("Введите значение");
-//
-//        jTextField1 = new JTextField(15);
-//        jTextField1.setToolTipText("Введите значение2");
-//
-//
-//
-//        contents.add(jTextField);
-//        contents.add(jTextField1);
-//        setContentPane(contents);
-//
-////        add(); //Создаем и добавляем компонент во фрейм
-////        pack(); //Устанавливаем размеры фрейма по размерам компонента(ов)
-//
-//    }
 
     public static void CreateGUI() {
-//        JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame frame = new JFrame("«Test frame»");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -244,7 +223,6 @@ public class MainFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Это событие мы не увидим");
-//                double[] timesAdd  = new double[] {/*10*/0.0512,0.00512,0.0272,0.00272,/*100*/0.0684,0.000684,0.169,0.00169,/*1000*/0.7174,0.0007174,0.489,0.000489,/*10000*/2.9696,0.00029696,2.0967,0.0002967,/*100000*/14.6629,0.000146629,8.0213,0.000080213};//10: AL: NA, A, LL: NA, A, 100: AL: NA, A, LL: NA, A...
                 double[] ArListADD=null;
                 double[] ArListAverageADD=null;
                 double[] LinkListADD=null;

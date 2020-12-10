@@ -17,9 +17,11 @@ public class MainFrame {
         JPanel PanelRadioButtons = new JPanel();
         JPanel SendButtonPanel = new JPanel();
         JPanel FieldsPanel = new JPanel();
+
         JRadioButton HighPriority = new JRadioButton("Высокий приоритет");
         JRadioButton SecondPriority = new JRadioButton("Средний приоритет");
         JRadioButton LastPriority = new JRadioButton("Низкий приоритет");
+
         ChangeColor(new JPanel[]{MainPanel, TitleTextPanel, FieldsPanel, PanelRadioButtons, SendButtonPanel}, Color.red);
         ChangeColorButton(new JRadioButton[]{HighPriority, SecondPriority, LastPriority}, Color.red);
 
@@ -142,7 +144,7 @@ public class MainFrame {
                 }
                 else{
                     String result = "";
-                    result += SecondNameTextField.getText() + " " + FirstNameTextField.getText() + " " + FatherNameTextField.getText() + " " + PhoneTextField.getText() + " ";
+                    result += "Фамилия: "+SecondNameTextField.getText() + "\nИмя: " + FirstNameTextField.getText() + "\nОтчетсво: " + FatherNameTextField.getText() + "\nНомер телефона: " + PhoneTextField.getText() + "\nПриоритет заказа: ";
                     if (HighPriority.isSelected()) {
                         result += "высокий приоритет";
                     } else if (SecondPriority.isSelected()) {
