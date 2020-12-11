@@ -8,6 +8,7 @@ public class GameMainFrame extends JFrame {
 
     private void IinitializeLayout() {
         add(new GamePanel());
+//        add(new MainMenuPanel(this));
         setTitle(Constants.TITLE);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //set icon frame

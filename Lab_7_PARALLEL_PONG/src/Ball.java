@@ -1,16 +1,19 @@
 import com.sun.org.apache.bcel.internal.Const;
 
+import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class Ball extends GameObject {
+public class Ball extends GameObject implements Runnable {
     Player player1;
     Player player2;
+    GamePanel panel;
 
-    public Ball(Player player1, Player player2) {
+    public Ball(Player player1, Player player2, GamePanel panel) {
         this.player1 = player1; // right
         this.player2 = player2; //left
+        this.panel = panel;
         initialize();
     }
 
@@ -28,8 +31,8 @@ public class Ball extends GameObject {
     public void move() {
         sendCoordinatesToPlayers();
         checkCollision();
-        setX(x + getxSpeed());
-        setY(y + getySpeed());
+        setX(getX() + getxSpeed());
+        setY(getY() + getySpeed());
 
     }
 
@@ -85,30 +88,30 @@ public class Ball extends GameObject {
     private void checkCollision() {
         //check up and
         //up collision
-        System.out.println("x=" + x + " y=" + y + " player1 x=" + player1.getX() + ", y=" + player1.getY() + " player2 x=" + player2.getX() + ", y=" + player2.getY());
-        if (x <= 0) {
+//        System.out.println("x=" + getX() + " y=" + getY() + " player1 x=" + player1.getX() + ", y=" + player1.getY() + " player2 x=" + player2.getX() + ", y=" + player2.getY());
+        if (getX() <= 0) {
 
             player1.restart();
             player2.restart();
             Score.setScore_1(Score.getScore_1() + 1);
             restart();
         }
-        if (x >= Constants.BOARD_WIDTH) {
+        if (getX() >= Constants.BOARD_WIDTH) {
             player1.restart();
             player2.restart();
             Score.setScore_2(Score.getScore_2() + 1);
             restart();
         } else {
-            if (y <= 2) {
+            if (getY() <= 2) {
                 setySpeed(-getySpeed());
 //                System.out.println("checkColl UP");
             }
-            if (y >= (Constants.BOARD_HIGHT - Constants.BALL_HIGHT - 40)) {
+            if (getY() >= (Constants.BOARD_HIGHT - Constants.BALL_HIGHT - 40)) {
                 setySpeed(-getySpeed());
                 setY(Constants.BOARD_HIGHT - Constants.BALL_HIGHT - 41);
 //                System.out.println("checkColl DOWN");
             }
-            if ((x <= player2.getX() + Constants.PLAYER_WIDTH) && (x >= player2.getX() - Constants.PLAYER_WIDTH)) {
+            if ((getX() <= player2.getX() + Constants.PLAYER_WIDTH) && (getX() >= player2.getX() - Constants.PLAYER_WIDTH)) {
                 int speeds[] = hitFactor(player2);
                 setxSpeed(speeds[0]);
                 setySpeed(speeds[1]);
@@ -116,7 +119,7 @@ public class Ball extends GameObject {
 //                System.out.println("checkColl 2Player");
 
             }
-            if ((x >= player1.getX() - Constants.BALL_WIDTH) && (x <= player1.getX() - Constants.BALL_WIDTH + Constants.PLAYER_WIDTH)) {
+            if ((getX() >= player1.getX() - Constants.BALL_WIDTH) && (getX() <= player1.getX() - Constants.BALL_WIDTH + Constants.PLAYER_WIDTH)) {
                 int speeds[] = hitFactor(player1);
                 setxSpeed(speeds[0]);
                 setySpeed(speeds[1]);
@@ -131,9 +134,9 @@ public class Ball extends GameObject {
     @Override
     public void restart() {
         Random random = new Random();
-        if (x <= 0) {
+        if (getX() <= 0) {
             setxSpeed(-Constants.BALL_SPEED_X);
-        } else if (x >= Constants.BOARD_WIDTH) {
+        } else if (getX() >= Constants.BOARD_WIDTH) {
             setxSpeed(Constants.BALL_SPEED_X);
         } else {
             setxSpeed(Constants.BALL_SPEED_X);
@@ -145,8 +148,9 @@ public class Ball extends GameObject {
         int start_x = Constants.BOARD_WIDTH / 2;
         setX(start_x - Constants.PLAYER_WIDTH);
         setY(random.nextInt((300 - 50) + 1) + 50);
-
         setySpeed(Constants.BALL_SPEED_Y);
+        player2.restart();
+        player1.restart();
     }
 
     private void newGame() {
@@ -177,7 +181,24 @@ public class Ball extends GameObject {
         int key = event.getKeyCode();
         if (key == Constants.RESTART_GAME_BUTTON) {
             newGame();
+            restart();
         }
     }
 
+    @Override
+    public void run() {
+        while (panel.isInGame()) {
+            while (!panel.isInPause()) {
+                try {
+                    move();
+                    Thread.sleep(Constants.GAME_SPEED);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+//                System.out.println("11");
+            }
+
+        }
+
+    }
 }

@@ -2,7 +2,7 @@ import com.sun.org.apache.bcel.internal.Const;
 
 import java.awt.event.KeyEvent;
 
-public class Player extends GameObject {
+public class Player extends GameObject implements Runnable {
     private static int count = 0;
     private int currentPlayer = 0;
     private int UpButton = 0;
@@ -11,8 +11,10 @@ public class Player extends GameObject {
 
     private int ballCoordinateX = 0;
     private int ballCoordinateY = 0;
+    private GamePanel panel;
 
-    public Player() {
+    public Player(GamePanel panel) {
+        this.panel = panel;
         initialize();
     }
 
@@ -48,12 +50,15 @@ public class Player extends GameObject {
         if (AIPlayer) {
             AIControl();
         }
-        y += dy;
+//        y += dy;
+        setY(getY() + dy);
 //        System.out.println(y);
-        if (y > Constants.BOARD_HIGHT - Constants.PLAYER_HIGHT - 40) {
-            y = Constants.BOARD_HIGHT - Constants.PLAYER_HIGHT - 40;
-        } else if (y < 0) {
-            y = 0;
+        if (getY() > Constants.BOARD_HIGHT - Constants.PLAYER_HIGHT - 40) {
+//            y = Constants.BOARD_HIGHT - Constants.PLAYER_HIGHT - 40;
+            setY(Constants.BOARD_HIGHT - Constants.PLAYER_HIGHT - 40);
+        } else if (getY() < 0) {
+//            y = 0;
+            setY(0);
         }
 
     }
@@ -61,7 +66,7 @@ public class Player extends GameObject {
 
     private void AIControl() {
         if ((currentPlayer == 1) && (ballCoordinateX > Constants.BOARD_WIDTH / 2)) {
-            if ((getY() + Constants.PLAYER_HIGHT / 2 )< ballCoordinateY) {
+            if ((getY() + Constants.PLAYER_HIGHT / 2) < ballCoordinateY) {
                 dy = getySpeed();
             } else {
                 dy = -getySpeed();
@@ -130,5 +135,20 @@ public class Player extends GameObject {
 
     public boolean isAIPlayer() {
         return AIPlayer;
+    }
+
+    @Override
+    public void run() {
+        while (panel.isInGame()) {
+            while (!panel.isInPause()) {
+                try {
+                    move();
+                    Thread.sleep(Constants.GAME_SPEED);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
     }
 }

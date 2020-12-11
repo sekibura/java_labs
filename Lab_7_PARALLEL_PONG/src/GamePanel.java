@@ -12,6 +12,8 @@ public class GamePanel extends JPanel {
     private boolean inGame = false;
     private Frame frame;
     private boolean inMenu = true;
+    private boolean inPause=false;
+    private Thread thread_player_1, thread_player_2, thread_ball;
 
 
     public GamePanel() {
@@ -45,9 +47,12 @@ public class GamePanel extends JPanel {
 
     private void initializedVariables() {
         Score score = new Score();
-        player1 = new Player();
-        player2 = new Player();
-        ball = new Ball(player1, player2);
+        player1 = new Player(this);
+        player2 = new Player(this);
+        ball = new Ball(player1, player2, this);
+        thread_player_1 = new Thread(player1);
+        thread_player_2 = new Thread(player2);
+        thread_ball = new Thread(ball);
         addKeyListener(new GameEventListener(this));
         setFocusable(true);
         // after every GAME_SPEED ms swing-> calls gameLoop
@@ -93,7 +98,7 @@ public class GamePanel extends JPanel {
     }
 
     private void doDrawing(Graphics g) {
-        if (inGame) {
+        if (inGame && !inPause) {
             removeAll();
             drawPlayer(g);
             drawBall(g);
@@ -122,9 +127,9 @@ public class GamePanel extends JPanel {
     //update coordinates gameObjects
     private void update() {
 //        System.out.println("Update");
-        this.player1.move();
-        this.player2.move();
-        this.ball.move();
+//        this.player1.move();
+//        this.player2.move();
+//        this.ball.move();
     }
 
     public void keyReleased(KeyEvent e) {
@@ -204,6 +209,11 @@ public class GamePanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 setTypeOfGame(TypeOfGame.single);
                 inGame = true;
+
+                thread_player_1.start();
+                thread_player_2.start();
+                thread_ball.start();
+
                 timer.start();
                 inMenu = false;
 
@@ -214,6 +224,9 @@ public class GamePanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 setTypeOfGame(TypeOfGame.multiplayer);
                 inGame = true;
+                thread_player_1.start();
+                thread_player_2.start();
+                thread_ball.start();
                 timer.start();
                 inMenu = false;
             }
@@ -224,6 +237,9 @@ public class GamePanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 setTypeOfGame(TypeOfGame.computerOnly);
                 inGame = true;
+                thread_player_1.start();
+                thread_player_2.start();
+                thread_ball.start();
                 timer.start();
                 inMenu = false;
             }
@@ -237,15 +253,33 @@ public class GamePanel extends JPanel {
         if (key == Constants.ESCAPE_BUTTON && !inMenu) {
             System.out.println("ESCAPE");
 //            inGame = false;
-            if (inGame) {
-                inGame = false;
+            if (!inPause) {
+//                inGame = false;
                 timer.stop();
+                setInPause(true);
             } else {
-                inGame = true;
+//                inGame = true;
                 timer.start();
+                setInPause(false);
+
             }
 
         }
     }
 
+    public synchronized boolean isInGame() {
+        return inGame;
+    }
+
+    public void setInGame(boolean inGame) {
+        this.inGame = inGame;
+    }
+
+    public void setInPause(boolean inPause) {
+        this.inPause = inPause;
+    }
+
+    public synchronized boolean isInPause() {
+        return inPause;
+    }
 }

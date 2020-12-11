@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class GameMainFrame extends JFrame {
     public GameMainFrame() {
@@ -7,7 +9,9 @@ public class GameMainFrame extends JFrame {
     }
 
     private void IinitializeLayout() {
-        add(new GamePanel());
+        GamePanel panel = new GamePanel();
+        add(panel);
+//        add(new MainMenuPanel(this));
         setTitle(Constants.TITLE);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //set icon frame
@@ -18,5 +22,15 @@ public class GameMainFrame extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
+
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                panel.setInGame(false);
+                super.windowClosing(e);
+
+            }
+        });
     }
+
 }

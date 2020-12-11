@@ -17,7 +17,7 @@ public class Constants {
     public static final int BALL_WIDTH = 10;
 
 
-    public static final int GAME_SPEED = 1; /*ms*/
+    public static final int GAME_SPEED = 10; /*ms*/
 
     //1player control
     public static final int FIRST_PLAYER_UP = KeyEvent.VK_UP;
