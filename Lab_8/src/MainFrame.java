@@ -16,12 +16,14 @@ public class MainFrame extends JFrame {
     private JButton StopServerButton;
     private JButton StopClientButton;
     private JScrollPane jscrollpane;
+    private JTextArea textArea1;
     MultiThreadServer multiThreadServer;
     ServerSocket serverSocket;
     public static TableData tableData;
 
 
     public MainFrame() {
+        textArea1.setEditable(false);
         setTitle(Constants.TITLE);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(new Dimension(Constants.BOARD_WIDTH, Constants.BOARD_HEIGHT));
@@ -31,8 +33,10 @@ public class MainFrame extends JFrame {
         add(panel1);
 
         tableData = new TableData();
+
         createTable();
         TableProcessor tableProcessor = new TableProcessor(table1);
+        TextAreaProcessor textAreaProcessor = new TextAreaProcessor(textArea1);
 
 
         StartServerButton.addActionListener(new ActionListener() {
@@ -71,7 +75,7 @@ public class MainFrame extends JFrame {
     private void createTable() {
         table1.setModel(new DefaultTableModel(
                 tableData.GetData(),
-                new String[]{"id", "Message"}
+                new String[]{"id", "nickname", "Message"}
         ));
 
     }

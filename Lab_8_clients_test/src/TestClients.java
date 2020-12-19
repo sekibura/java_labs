@@ -35,6 +35,7 @@ public class TestClients {
         static Socket socket;
         static int count = 0;
         private int myCount=0;
+        private boolean isNicknameSended=false;
 
         public TestRunnableClientTester() {
             try {
@@ -43,7 +44,7 @@ public class TestClients {
                 // создаём сокет общения на стороне клиента в конструкторе объекта
                 socket = new Socket("localhost", 1000);
                 System.out.println("Client connected to socket");
-                Thread.sleep(2000);
+                Thread.sleep(100);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -64,11 +65,18 @@ public class TestClients {
                 int i = 0;
                 // создаём рабочий цикл
                 while (true) {
-
+                    Random random = new Random();
                     // пишем сообщение автогенерируемое циклом клиента в канал
                     // сокета для сервера
-                    Random random = new Random();
-                    oos.writeUTF(myCount + " clientCommand " + random.nextInt(100));
+                    if(!isNicknameSended){
+                        isNicknameSended=true;
+                        oos.writeUTF("nickname_"+count+"_"+random.nextInt(100));
+                    }
+                    else {
+                        System.out.println("sending message");
+                        oos.writeUTF(myCount + " clientCommand " + random.nextInt(100));
+                    }
+
 
                     // проталкиваем сообщение из буфера сетевых сообщений в канал
                     oos.flush();
@@ -85,7 +93,8 @@ public class TestClients {
                     String in = ois.readUTF();
                     System.out.println(in);
                     i++;
-                    Thread.sleep(5000);
+
+                    Thread.sleep(random.nextInt(3000));
 
                 }
 //                oos.writeUTF("quit");
@@ -98,5 +107,7 @@ public class TestClients {
                 e.printStackTrace();
             }
         }
+
     }
+
 }

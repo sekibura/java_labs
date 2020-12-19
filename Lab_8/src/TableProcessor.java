@@ -31,7 +31,7 @@ public class TableProcessor {
         for (int i = 0; i < model.getRowCount(); i++) {
             if ((int) model.getValueAt(i, 0) == ID) {
 
-                model.setValueAt(message, i, 1);
+                model.setValueAt(message, i, 2);
 
                 break;
             }

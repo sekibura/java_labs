@@ -20,23 +20,23 @@ public class TableData {
 //        AddEntry(new Socket(), "Hello3");
     }
 
-    synchronized public void AddEntry(Socket socket, String message) {
-        clients.put(ID, new Object[]{socket, message});
+    synchronized public void AddEntry(Socket socket, String message, String nickname) {
+        clients.put(ID, new Object[]{socket, message, nickname});
         socket_id.put(socket, ID);
-        TableProcessor.AddRow(new Object[]{ID, message});
+        TableProcessor.AddRow(new Object[]{ID, nickname,message});
         ID++;
 
-        for (Map.Entry<Integer, Object[]> entry : clients.entrySet()) {
-            int key = entry.getKey();
-            Object[] value = entry.getValue();
-            System.out.print(key + " " + value[0]);
-        }
-        System.out.println();
-        for (Map.Entry<Socket, Integer> entry : socket_id.entrySet()) {
-            Socket key = entry.getKey();
-            Integer value = entry.getValue();
-            System.out.print(key + " "+value.toString());
-        }
+//        for (Map.Entry<Integer, Object[]> entry : clients.entrySet()) {
+//            int key = entry.getKey();
+//            Object[] value = entry.getValue();
+//            System.out.print(key + " " + value[0]);
+//        }
+//        System.out.println();
+//        for (Map.Entry<Socket, Integer> entry : socket_id.entrySet()) {
+//            Socket key = entry.getKey();
+//            Integer value = entry.getValue();
+//            System.out.print(key + " " + value.toString());
+//        }
     }
 
     synchronized public void UpdateEntryByID(int ID, String message) {
@@ -64,11 +64,11 @@ public class TableData {
     }
 
     synchronized private int FindId(Socket socket) {
-        System.out.println("\n"+"ID="+socket_id.get(socket)+" socket="+socket+" "+"\n");
+        System.out.println("\n" + "ID=" + socket_id.get(socket) + " socket=" + socket + " " + "\n");
         return socket_id.get(socket);
     }
 
-    synchronized public  Socket GetSocketByID(int ID){
+    synchronized public Socket GetSocketByID(int ID) {
         return (Socket) clients.get(ID)[0];
     }
 
@@ -83,13 +83,15 @@ public class TableData {
             // In your case, another loop.
             data[i][0] = key;
             data[i][1] = value[1];
+            data[i][2] = value[2];
             System.out.println(data[i][0] + " " + data[i][1]);
             i++;
         }
 
         return data;
     }
-    synchronized public void ClearData(){
+
+    synchronized public void ClearData() {
         clients = new HashMap<Integer, Object[]>();
         socket_id = new HashMap<Socket, Integer>();
     }

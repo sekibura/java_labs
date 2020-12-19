@@ -4,6 +4,8 @@ import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.Buffer;
+import java.sql.ClientInfoStatus;
+import java.util.ArrayList;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -13,11 +15,14 @@ public class MultiThreadServer implements Runnable {
 
     static ExecutorService executorService = Executors.newFixedThreadPool(10);
     public static ServerSocket ServerSocket;
+    private static ArrayList<MonoClientHandler> ClientHandlers;
 
     public static void StartServer() {
 
+
         try (ServerSocket serverSocket = new ServerSocket(1000);
              BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in))) {
+            ClientHandlers=new ArrayList<MonoClientHandler>(0);
             ServerSocket = serverSocket;
             System.out.println("Server socket created, command console reader for listen to server commands");
 
@@ -35,7 +40,9 @@ public class MultiThreadServer implements Runnable {
                 }
 
                 Socket client = serverSocket.accept();
-                executorService.execute(new MonoClientHandler(client));
+                MonoClientHandler NewClient=new MonoClientHandler(client);
+                ClientHandlers.add(NewClient);
+                executorService.execute(NewClient);
                 System.out.print("Connection accepted.");
 
             }
@@ -52,5 +59,11 @@ public class MultiThreadServer implements Runnable {
     public void run() {
         StartServer();
         System.out.println("WORK FINISHED");
+    }
+
+    public static void SentMessageToAll(String msg){
+        for(MonoClientHandler client: ClientHandlers){
+            client.SendMsg(msg);
+        }
     }
 }
