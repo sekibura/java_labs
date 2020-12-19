@@ -51,6 +51,8 @@ class CoordinateGrid extends JPanel {
     }
 
     protected void paintComponent(Graphics g) {
+
+
         double max = MaxValue(AL, LL);
 
         int XStart = 30;
@@ -124,20 +126,24 @@ class CoordinateGrid extends JPanel {
     }
 
     private double MaxValue(double AL[], double LL[]) {
+        double prevMax = AL[0];
         double max = AL[0];
         if (AL.length == LL.length) {
             for (int i = 0; i < AL.length; i++) {
                 if (AL[i] > max) {
+                    prevMax = max;
                     max = AL[i];
                 }
             }
             for (int i = 0; i < LL.length; i++) {
                 if (LL[i] > max) {
+                    prevMax = max;
                     max = LL[i];
                 }
             }
         }
-        return max;
+
+        return prevMax;
     }
 
 
