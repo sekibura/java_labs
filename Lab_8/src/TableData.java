@@ -13,8 +13,8 @@ public class TableData {
     private static int ID = 0;
 
     public TableData() {
-        clients = new HashMap<Integer, Object[]>();
-        socket_id = new HashMap<Socket, Integer>();
+        clients = new HashMap<Integer, Object[]>(0);
+        socket_id = new HashMap<Socket, Integer>(0);
 //        AddEntry(new Socket(), "Hello");
 //        AddEntry(new Socket(), "Hello2");
 //        AddEntry(new Socket(), "Hello3");
@@ -92,7 +92,7 @@ public class TableData {
     }
 
     synchronized public void ClearData() {
-        clients = new HashMap<Integer, Object[]>();
-        socket_id = new HashMap<Socket, Integer>();
+        clients.clear();
+        socket_id.clear();
     }
 }

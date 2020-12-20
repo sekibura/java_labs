@@ -17,5 +17,11 @@ public class TextAreaProcessor {
 //        System.out.println(formatter.format(date));
 
         jTextArea.append(formatter.format(date)+": " + message + "\n");
+        jTextArea.setCaretPosition(jTextArea.getDocument().getLength());
+    }
+
+    public static void ClearWindow(){
+        jTextArea.selectAll();
+        jTextArea.replaceSelection("");
     }
 }

@@ -17,9 +17,11 @@ public class MainFrame extends JFrame {
     private JButton StopClientButton;
     private JScrollPane jscrollpane;
     private JTextArea textArea1;
+    private JButton clearLogButton;
     MultiThreadServer multiThreadServer;
     ServerSocket serverSocket;
     public static TableData tableData;
+    private static boolean isWorking = false;
 
 
     public MainFrame() {
@@ -37,23 +39,36 @@ public class MainFrame extends JFrame {
         createTable();
         TableProcessor tableProcessor = new TableProcessor(table1);
         TextAreaProcessor textAreaProcessor = new TextAreaProcessor(textArea1);
-
+        multiThreadServer = new MultiThreadServer();
 
         StartServerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//                MultiThreadServer.StartServer();
-//                tableData.ClearData();
-                multiThreadServer = new MultiThreadServer();
-                Thread thread = new Thread(multiThreadServer);
-                thread.start();
+                if (!isWorking) {
+                    try {
+                        Thread thread = new Thread(multiThreadServer);
+                        thread.start();
+                        isWorking = true;
+                    } catch (Exception exception) {
+                        exception.printStackTrace();
+                        TextAreaProcessor.AddLine("System", exception.getMessage());
+                    }
+
+                } else {
+                    TextAreaProcessor.AddLine("System", "Server already started!");
+                }
+
             }
         });
         StopServerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                putQuitToSystemIn();
+//                putQuitToSystemIn();
 //                tableData.ClearData();
+                MultiThreadServer.StopServer();
+                tableData.ClearData();
+                isWorking = false;
+
             }
         });
         StopClientButton.addActionListener(new ActionListener() {
@@ -62,12 +77,17 @@ public class MainFrame extends JFrame {
                 int row = table1.getSelectedRow();
                 int ID = (int) ((DefaultTableModel) table1.getModel()).getValueAt(row, 0);
                 try {
-                    tableData.GetSocketByID(ID).close();
-                    tableData.RemoveClientByID(ID);
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
+                    MultiThreadServer.StopHandlerBySocket(tableData.GetSocketByID(ID));
+                } catch (Exception ex) {
+                    ex.printStackTrace();
                 }
 
+            }
+        });
+        clearLogButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                TextAreaProcessor.ClearWindow();
             }
         });
     }
